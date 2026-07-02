@@ -1,0 +1,112 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:9f8b1e42-0c1a-4d77-9b3e-2f6a5c8d1e00",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-06-01T00:00:00Z",
+    "component": {
+      "type": "application",
+      "name": "acme-checkout-service",
+      "version": "2.4.0"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/left-pad@1.3.0",
+      "name": "left-pad",
+      "version": "1.3.0",
+      "purl": "pkg:npm/left-pad@1.3.0",
+      "licenses": [{ "license": { "id": "MIT" } }]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/express@4.18.2",
+      "name": "express",
+      "version": "4.18.2",
+      "purl": "pkg:npm/express@4.18.2",
+      "licenses": [{ "license": { "id": "MIT" } }]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/lodash@4.17.19",
+      "name": "lodash",
+      "version": "4.17.19",
+      "purl": "pkg:npm/lodash@4.17.19",
+      "licenses": [{ "license": { "id": "MIT" } }]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/requests@2.31.0",
+      "name": "requests",
+      "version": "2.31.0",
+      "purl": "pkg:pypi/requests@2.31.0",
+      "licenses": [{ "license": { "id": "Apache-2.0" } }]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/urllib3@1.26.5",
+      "name": "urllib3",
+      "version": "1.26.5",
+      "purl": "pkg:pypi/urllib3@1.26.5",
+      "licenses": [{ "license": { "id": "MIT" } }]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.10",
+      "name": "jackson-databind",
+      "version": "2.9.10",
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.10",
+      "licenses": [{ "license": { "id": "Apache-2.0" } }]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/minimist@1.2.5",
+      "name": "minimist",
+      "version": "1.2.5",
+      "purl": "pkg:npm/minimist@1.2.5",
+      "licenses": [{ "license": { "id": "MIT" } }]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:golang/github.com/gin-gonic/gin@1.9.1",
+      "name": "gin",
+      "version": "1.9.1",
+      "purl": "pkg:golang/github.com/gin-gonic/gin@1.9.1",
+      "licenses": [{ "license": { "id": "MIT" } }]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/serde@1.0.188",
+      "name": "serde",
+      "version": "1.0.188",
+      "purl": "pkg:cargo/serde@1.0.188",
+      "licenses": [{ "license": { "id": "MIT" } }]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/vendor-analytics@0.9.2",
+      "name": "vendor-analytics",
+      "version": "0.9.2",
+      "purl": "pkg:npm/vendor-analytics@0.9.2",
+      "licenses": [{ "license": { "id": "GPL-3.0-only" } }]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pyyaml@5.3",
+      "name": "pyyaml",
+      "version": "5.3",
+      "purl": "pkg:pypi/pyyaml@5.3",
+      "licenses": [{ "license": { "id": "MIT" } }]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/event-stream@3.3.6",
+      "name": "event-stream",
+      "version": "3.3.6",
+      "purl": "pkg:npm/event-stream@3.3.6",
+      "licenses": [{ "license": { "id": "MIT" } }]
+    }
+  ]
+}

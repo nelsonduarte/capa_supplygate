@@ -1,0 +1,66 @@
+// jsonx.capa
+//
+// Small, total extraction helpers over the built-in JsonValue tree, shared
+// by the three input parsers (ingest.capa for the SBOM, feed.capa for the
+// OSV export, policy.capa for the org policy). Zero capabilities: pure
+// reads over an already-parsed JSON value.
+//
+// Strictness rule, applied uniformly: a MISSING field falls back to a
+// neutral default (empty string / zero / empty list); a PRESENT field of
+// the wrong JSON type also degrades to the default rather than crashing.
+// The parsers layer their own required-field checks on top where a missing
+// value should be an error.
+
+// The object at obj[key], or an empty map when absent / not an object.
+pub fun obj_field(obj: Map<String, JsonValue>, key: String) -> Map<String, JsonValue>
+    match obj.get(key)
+        None -> return new_map()
+        Some(jv) ->
+            match jv.as_object()
+                Some(m) -> return m
+                None    -> return new_map()
+
+// The array at obj[key], or an empty list when absent / not an array.
+pub fun arr_field(obj: Map<String, JsonValue>, key: String) -> List<JsonValue>
+    match obj.get(key)
+        None ->
+            let empty: List<JsonValue> = []
+            return empty
+        Some(jv) ->
+            match jv.as_array()
+                Some(xs) -> return xs
+                None ->
+                    let empty2: List<JsonValue> = []
+                    return empty2
+
+// The string at obj[key], or "" when absent / not a string.
+pub fun str_field(obj: Map<String, JsonValue>, key: String) -> String
+    match obj.get(key)
+        None -> return ""
+        Some(jv) ->
+            match jv.as_string()
+                Some(s) -> return s
+                None    -> return ""
+
+// A JSON number at obj[key] read as fixed-point tenths (7.5 -> 75). Absent
+// or non-numeric yields 0. Rounding to the nearest tenth is done once here
+// so no float formatting survives into report output.
+pub fun tenths_field(obj: Map<String, JsonValue>, key: String) -> Int
+    match obj.get(key)
+        None -> return 0
+        Some(jv) ->
+            match jv.as_num()
+                Some(f) -> return to_int(f * 10.0 + 0.5)
+                None    -> return 0
+
+// An object value into its map form, or an empty map.
+pub fun as_obj(jv: JsonValue) -> Map<String, JsonValue>
+    match jv.as_object()
+        Some(m) -> return m
+        None    -> return new_map()
+
+// A string value, or "".
+pub fun as_str(jv: JsonValue) -> String
+    match jv.as_string()
+        Some(s) -> return s
+        None    -> return ""

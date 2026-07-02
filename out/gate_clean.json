@@ -1,0 +1,8 @@
+{
+  "gate": "pass",
+  "passed": true,
+  "project": "acme-checkout-service@2.5.0",
+  "component_count": 6,
+  "violation_count": 0,
+  "violations": []
+}

@@ -1,0 +1,130 @@
+// eval.capa
+//
+// The gate engine. Cross-references each project component against the OSV
+// advisories and the organisation policy, and accumulates a typed list of
+// violations into a Decision. Zero capabilities: pure evaluation over the
+// parsed inputs. Deterministic and backend-identical (document order, no
+// clock, no randomness, fixed-point CVSS).
+//
+// Four independent rules, each producing a Violation with a machine-
+// readable rule tag and a human-readable reason:
+//
+//   vulnerability - a component matches an OSV advisory whose CVSS exceeds
+//                   the policy's max_cvss.
+//   license       - a component's licence is on the deny list, or (when an
+//                   allow list is set) is not on the allow list.
+//   banned        - a component's package is explicitly banned.
+//   pin           - a policy-pinned package is present at the wrong version.
+
+import domain
+
+fun contains(items: List<String>, target: String) -> Bool
+    for it in items
+        if it == target
+            return true
+    return false
+
+fun coord(c: Component) -> String
+    return "${c.name}@${c.version}"
+
+// =========================================================
+// Rule: known vulnerabilities above the CVSS ceiling
+// =========================================================
+//
+// A component is matched to an advisory by package name AND version: the
+// advisory's package must equal the component's, and the component's
+// version must be among the advisory's affected versions. Version-aware
+// matching means a fixed build (a version the advisory does not name) does
+// not fire, even when an advisory for the same package exists (see lodash
+// in the sample data, whose advisory affects only older versions).
+fun vuln_violations(comps: List<Component>, advs: List<Advisory>, max_cvss_tenths: Int) -> List<Violation>
+    var out: List<Violation> = []
+    for c in comps
+        for a in advs
+            if a.package == c.name and a.affects(c.version)
+                if a.cvss_tenths > max_cvss_tenths
+                    out.push(Violation {
+                        rule: "vulnerability",
+                        component: coord(c),
+                        detail: "${a.id} (${a.severity}, CVSS ${cvss_str(a.cvss_tenths)}) exceeds policy ceiling CVSS ${cvss_str(max_cvss_tenths)}: ${a.summary}"
+                    })
+    return out
+
+// =========================================================
+// Rule: licences
+// =========================================================
+
+fun license_violations(comps: List<Component>, pol: Policy) -> List<Violation>
+    var out: List<Violation> = []
+    for c in comps
+        let lic = c.license
+        if lic == ""
+            out.push(Violation {
+                rule: "license",
+                component: coord(c),
+                detail: "component declares no licence; policy requires an allow-listed SPDX licence"
+            })
+        elif contains(pol.denied_licenses, lic)
+            out.push(Violation {
+                rule: "license",
+                component: coord(c),
+                detail: "licence '${lic}' is on the policy deny list"
+            })
+        elif pol.allowed_licenses.length() > 0 and not contains(pol.allowed_licenses, lic)
+            out.push(Violation {
+                rule: "license",
+                component: coord(c),
+                detail: "licence '${lic}' is not on the policy allow list"
+            })
+    return out
+
+// =========================================================
+// Rule: banned packages
+// =========================================================
+
+fun banned_violations(comps: List<Component>, pol: Policy) -> List<Violation>
+    var out: List<Violation> = []
+    for c in comps
+        if contains(pol.banned_packages, c.name)
+            out.push(Violation {
+                rule: "banned",
+                component: coord(c),
+                detail: "package '${c.name}' is explicitly banned by policy"
+            })
+    return out
+
+// =========================================================
+// Rule: required version pins
+// =========================================================
+
+fun pin_violations(comps: List<Component>, pol: Policy) -> List<Violation>
+    var out: List<Violation> = []
+    for p in pol.pins
+        for c in comps
+            if c.name == p.package and c.version != p.version
+                out.push(Violation {
+                    rule: "pin",
+                    component: coord(c),
+                    detail: "policy pins '${p.package}' at ${p.version}, but ${c.version} is present"
+                })
+    return out
+
+// =========================================================
+// The aggregate decision
+// =========================================================
+
+pub fun evaluate(project: String, comps: List<Component>, advs: List<Advisory>, pol: Policy) -> Decision
+    var violations: List<Violation> = []
+    for v in vuln_violations(comps, advs, pol.max_cvss_tenths)
+        violations.push(v)
+    for v in banned_violations(comps, pol)
+        violations.push(v)
+    for v in license_violations(comps, pol)
+        violations.push(v)
+    for v in pin_violations(comps, pol)
+        violations.push(v)
+    return Decision {
+        project: project,
+        component_count: comps.length(),
+        violations: violations
+    }

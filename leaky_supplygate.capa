@@ -1,0 +1,58 @@
+// leaky_supplygate.capa
+//
+// COUNTER-EXAMPLE. This file deliberately does the wrong thing so you can
+// watch the information-flow checker reject it. It is NOT part of the gate
+// and is never imported by supplygate.capa.
+//
+// Try it:
+//     python -m capa --check leaky_supplygate.capa
+//
+// You will see a hard ERROR: the @secret OSV-feed credential
+// (feed.FeedCredential.token) reaches a public sink - the gate JSON via
+// Fs.write, the gate report via Fs.write, or the console via Stdio.println
+// / Logger - WITHOUT crossing an audited declassify. Every function below
+// opts into @strict_ifc, so such a flow is a compile error and the program
+// refuses to build.
+//
+// The point: SupplyGate cannot leak its own credentials. A supply-chain
+// tool that reads everyone's SBOMs must not itself become the exfiltration
+// path, and here that is a machine-checked fact, not a promise.
+
+import domain
+import feed
+import capa_log.log
+import capa_log.stdio_logger
+
+// WRONG: writes the raw feed token into the machine-readable gate JSON.
+// creds.token is @secret, the interpolated string is @secret, and Fs.write
+// is a public sink. There is no declassify, so this is an unaudited
+// disclosure of the tool's credential.
+@strict_ifc()
+fun leak_token_to_gate_json(fs: Fs, creds: FeedCredential)
+    let line = "{\"feed_token\": \"${creds.token}\"}\n"
+    match fs.write("out/gate.json", line)
+        Ok(_)  -> ()
+        Err(_) -> ()
+
+// WRONG: embeds the full Authorization header (which derives from the
+// @secret token, so is itself @secret) into the human report file.
+@strict_ifc()
+fun leak_header_to_report(fs: Fs, creds: FeedCredential)
+    let header = feed.feed_request_header(creds)
+    match fs.write("out/report.txt", "auth: ${header}\n")
+        Ok(_)  -> ()
+        Err(_) -> ()
+
+// WRONG: prints the credential to the console. Same violation, a different
+// public sink (Stdio.println).
+@strict_ifc()
+fun leak_token_to_console(stdio: Stdio, creds: FeedCredential)
+    stdio.println("using feed token ${creds.token}")
+
+// WRONG: logs the credential through the capa_log Logger, which fans out to
+// Stdio. Routing a secret through a helper capability does not launder it;
+// the flow to the underlying public sink is still rejected.
+@strict_ifc()
+fun leak_token_via_logger(stdio: Stdio, creds: FeedCredential)
+    let logger = stdio_logger.make_stdio_logger(stdio, INFO)
+    logger.error("feed token is ${creds.token}")

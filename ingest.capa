@@ -1,0 +1,72 @@
+// ingest.capa
+//
+// Parse the project's CycloneDX 1.x SBOM (JSON) into typed domain
+// Components, threading Result across every fallible step. Zero
+// capabilities: works on text the caller already read through an
+// attenuated, read-only Fs.
+//
+// v1 lifts, per components[] entry: bom-ref, name, version, purl, and the
+// first declared SPDX license id (licenses[].license.id, the CycloneDX
+// idiom). Everything else in the document is intentionally ignored; the
+// gate only needs identity, version and licence to evaluate policy.
+
+import domain
+import jsonx
+
+// The parsed SBOM: the document subject (metadata.component.name@version)
+// plus its components.
+pub type ProjectSbom {
+    subject: String,
+    components: List<Component>
+}
+
+// Extract the first SPDX license id from a component's licenses[] array.
+// CycloneDX encodes each entry as { "license": { "id": "MIT" } } (SPDX id)
+// or { "license": { "name": "..." } } (free text); the id is preferred,
+// with name as a fallback. "" when the component declares no licence.
+fun first_license(comp: Map<String, JsonValue>) -> String
+    for entry_jv in arr_field(comp, "licenses")
+        let entry = as_obj(entry_jv)
+        let lic = obj_field(entry, "license")
+        let id = str_field(lic, "id")
+        if id != ""
+            return id
+        let name = str_field(lic, "name")
+        if name != ""
+            return name
+    return ""
+
+fun parse_component(jv: JsonValue) -> Component
+    let comp = as_obj(jv)
+    return Component {
+        ref_id: str_field(comp, "bom-ref"),
+        name: str_field(comp, "name"),
+        version: str_field(comp, "version"),
+        purl: str_field(comp, "purl"),
+        license: first_license(comp)
+    }
+
+// Parse the whole SBOM. Validates the document really is CycloneDX before
+// lifting components, so a wrong-format file is a clear BadSbom rather than
+// an empty component list.
+pub fun parse_sbom(text: String) -> Result<ProjectSbom, GateError>
+    let root = match parse_json(text)
+        Ok(v)  -> v
+        Err(e) -> return Err(BadSbom("invalid JSON: ${e}"))
+    let obj = match root.as_object()
+        Some(m) -> m
+        None    -> return Err(BadSbom("top-level JSON value is not an object"))
+    let fmt = str_field(obj, "bomFormat")
+    if fmt != "CycloneDX"
+        return Err(BadSbom("bomFormat is '${fmt}' (expected 'CycloneDX')"))
+
+    let metadata = obj_field(obj, "metadata")
+    let meta_component = obj_field(metadata, "component")
+    let name = str_field(meta_component, "name")
+    let version = str_field(meta_component, "version")
+    let subject = if version != "" then "${name}@${version}" else name
+
+    var components: List<Component> = []
+    for comp_jv in arr_field(obj, "components")
+        components.push(parse_component(comp_jv))
+    return Ok(ProjectSbom { subject: subject, components: components })

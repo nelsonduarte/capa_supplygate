@@ -1,0 +1,144 @@
+// domain.capa
+//
+// The shared data vocabulary for SupplyGate. Pure data plus small total
+// helpers; zero capabilities, no I/O. Every other module imports this so
+// the types and the security label stay consistent end to end.
+//
+// SupplyGate is a supply-chain COMPLIANCE GATE for CI/CD. It reads three
+// local inputs (a project's CycloneDX SBOM, an offline OSV vulnerability
+// export, and the organisation's policy), cross-references them, and
+// decides PASS or FAIL for the build. It then emits its OWN capability
+// SBOM as proof of what authority it holds.
+//
+// The Capa angle lives in two independent, compiler-checked properties:
+//
+//   * INFORMATION FLOW. The tool holds an OSV-feed API token as a
+//     @secret. The compiler proves that token can never reach the public
+//     gate report or the machine-readable gate decision. leaky_supplygate
+//     .capa shows the compiler rejecting a deliberate leak of exactly it.
+//
+//   * CAPABILITY DISCIPLINE. main acquires exactly {Fs, Stdio}. It reads
+//     local files, so it never acquires Net. The capability SBOM
+//     (capa --manifest / --cyclonedx) proves the surface: a supply-chain
+//     tool that cannot itself exfiltrate.
+
+// =========================================================
+// The OSV-feed credential (a @secret the tool holds)
+// =========================================================
+//
+// SupplyGate models an authenticated OSV feed: even though this build
+// reads a LOCAL osv.json, the tool holds the bearer token it would present
+// to a live feed. The token is @secret, so the compiler forbids it from
+// reaching any public sink (the gate report, the gate JSON, the console).
+// The one legitimate use is presenting it to the feed; here that use is
+// modelled but no value is ever emitted. See feed.capa.
+
+// =========================================================
+// A resolved dependency component (from the project SBOM)
+// =========================================================
+
+pub type Component {
+    ref_id: String,       // CycloneDX bom-ref
+    name: String,
+    version: String,
+    purl: String,
+    license: String       // first declared SPDX license id, or "" if none
+}
+
+// =========================================================
+// A vulnerability advisory (from the OSV export)
+// =========================================================
+//
+// cvss is carried as an INTEGER of tenths (75 == CVSS 7.5). Parsing the
+// JSON float once into a fixed-point tenth keeps every downstream
+// comparison and every printed value byte-identical across the Python and
+// Wasm backends, with no floating-point formatting in the hot path.
+
+pub type Advisory {
+    id: String,
+    package: String,
+    affected: List<String>,   // affected version strings (exact match)
+    summary: String,
+    severity: String,
+    cvss_tenths: Int
+}
+
+impl Advisory
+    // The advisory fires for a component version only when that exact
+    // version is in its affected set. Conservative by design: a version the
+    // advisory does not name does not trigger a violation.
+    pub fun affects(self, version: String) -> Bool
+        for v in self.affected
+            if v == version
+                return true
+        return false
+
+// =========================================================
+// The organisation policy
+// =========================================================
+
+pub type Pin {
+    package: String,
+    version: String
+}
+
+pub type Policy {
+    name: String,
+    max_cvss_tenths: Int,
+    allowed_licenses: List<String>,
+    denied_licenses: List<String>,
+    banned_packages: List<String>,
+    pins: List<Pin>
+}
+
+// =========================================================
+// A single policy violation and the aggregate gate decision
+// =========================================================
+
+pub type Violation {
+    rule: String,          // "vulnerability" | "license" | "banned" | "pin"
+    component: String,     // the offending component name@version
+    detail: String         // human-readable reason
+}
+
+pub type Decision {
+    project: String,
+    component_count: Int,
+    violations: List<Violation>
+}
+
+impl Decision
+    // A build passes only when it accrues zero violations.
+    pub fun passed(self) -> Bool
+        return self.violations.length() == 0
+
+    pub fun verdict(self) -> String
+        if self.passed()
+            return "PASS"
+        return "FAIL"
+
+// =========================================================
+// CVSS tenths formatting (deterministic, backend-identical)
+// =========================================================
+
+pub fun cvss_str(tenths: Int) -> String
+    let whole = tenths / 10
+    let frac = tenths - whole * 10
+    return "${whole}.${frac}"
+
+// =========================================================
+// Typed error channel
+// =========================================================
+
+pub type GateError =
+    Io(String)
+    BadSbom(String)
+    BadOsv(String)
+    BadPolicy(String)
+
+pub fun gate_error_message(e: GateError) -> String
+    return match e
+        Io(m)        -> "I/O error: ${m}"
+        BadSbom(m)   -> "cannot parse project SBOM: ${m}"
+        BadOsv(m)    -> "cannot parse OSV dataset: ${m}"
+        BadPolicy(m) -> "cannot parse policy: ${m}"

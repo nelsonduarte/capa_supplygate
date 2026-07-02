@@ -1,0 +1,4090 @@
+{
+  "capa_version": "1.13.0",
+  "schema_version": 1,
+  "filename": "supplygate.capa",
+  "user_defined_capabilities": [
+    {
+      "name": "Logger",
+      "methods": [
+        "log",
+        "debug",
+        "info",
+        "warn",
+        "error"
+      ],
+      "implementors": [
+        "StdioLogger"
+      ],
+      "doc": null
+    }
+  ],
+  "typestates": [],
+  "functions": [
+    {
+      "name": "affects",
+      "source_name": "affects",
+      "container": "Advisory",
+      "source_container": "Advisory",
+      "source_module_index": null,
+      "pos": "domain.capa:70:9",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "self",
+          "type": "Self",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "Bool",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [],
+      "declassifications": []
+    },
+    {
+      "name": "passed",
+      "source_name": "passed",
+      "container": "Decision",
+      "source_container": "Decision",
+      "source_module_index": null,
+      "pos": "domain.capa:112:9",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "self",
+          "type": "Self",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "Bool",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "method",
+          "callee": "self.violations.length",
+          "pos": "113:16",
+          "args": [],
+          "args_flow": []
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "verdict",
+      "source_name": "verdict",
+      "container": "Decision",
+      "source_container": "Decision",
+      "source_module_index": null,
+      "pos": "domain.capa:115:9",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "self",
+          "type": "Self",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "String",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "method",
+          "callee": "self.passed",
+          "pos": "116:12",
+          "args": [],
+          "args_flow": []
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "cvss_str",
+      "source_name": "cvss_str",
+      "container": null,
+      "source_container": null,
+      "source_module_index": null,
+      "pos": "domain.capa:124:5",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "tenths",
+          "type": "Int",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "String",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [],
+      "declassifications": []
+    },
+    {
+      "name": "gate_error_message",
+      "source_name": "gate_error_message",
+      "container": null,
+      "source_container": null,
+      "source_module_index": null,
+      "pos": "domain.capa:139:5",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "e",
+          "type": "GateError",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "String",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [],
+      "declassifications": []
+    },
+    {
+      "name": "obj_field",
+      "source_name": "obj_field",
+      "container": null,
+      "source_container": null,
+      "source_module_index": null,
+      "pos": "jsonx.capa:15:5",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "obj",
+          "type": "Map<String, JsonValue>",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "key",
+          "type": "String",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "Map<String, JsonValue>",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "method",
+          "callee": "obj.get",
+          "pos": "16:11",
+          "args": [
+            "key"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "new_map",
+          "pos": "17:24",
+          "args": [],
+          "args_flow": []
+        },
+        {
+          "kind": "method",
+          "callee": "jv.as_object",
+          "pos": "19:19",
+          "args": [],
+          "args_flow": []
+        },
+        {
+          "kind": "fn",
+          "callee": "new_map",
+          "pos": "21:35",
+          "args": [],
+          "args_flow": []
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "arr_field",
+      "source_name": "arr_field",
+      "container": null,
+      "source_container": null,
+      "source_module_index": null,
+      "pos": "jsonx.capa:24:5",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "obj",
+          "type": "Map<String, JsonValue>",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "key",
+          "type": "String",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "List<JsonValue>",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "method",
+          "callee": "obj.get",
+          "pos": "25:11",
+          "args": [
+            "key"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "jv.as_array",
+          "pos": "30:19",
+          "args": [],
+          "args_flow": []
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "str_field",
+      "source_name": "str_field",
+      "container": null,
+      "source_container": null,
+      "source_module_index": null,
+      "pos": "jsonx.capa:37:5",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "obj",
+          "type": "Map<String, JsonValue>",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "key",
+          "type": "String",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "String",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "method",
+          "callee": "obj.get",
+          "pos": "38:11",
+          "args": [
+            "key"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "jv.as_string",
+          "pos": "41:19",
+          "args": [],
+          "args_flow": []
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "tenths_field",
+      "source_name": "tenths_field",
+      "container": null,
+      "source_container": null,
+      "source_module_index": null,
+      "pos": "jsonx.capa:48:5",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "obj",
+          "type": "Map<String, JsonValue>",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "key",
+          "type": "String",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "Int",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "method",
+          "callee": "obj.get",
+          "pos": "49:11",
+          "args": [
+            "key"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "jv.as_num",
+          "pos": "52:19",
+          "args": [],
+          "args_flow": []
+        },
+        {
+          "kind": "fn",
+          "callee": "to_int",
+          "pos": "53:35",
+          "args": [
+            "f * 10.0 + 0.5"
+          ],
+          "args_flow": [
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "as_obj",
+      "source_name": "as_obj",
+      "container": null,
+      "source_container": null,
+      "source_module_index": null,
+      "pos": "jsonx.capa:57:5",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "jv",
+          "type": "JsonValue",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "Map<String, JsonValue>",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "method",
+          "callee": "jv.as_object",
+          "pos": "58:11",
+          "args": [],
+          "args_flow": []
+        },
+        {
+          "kind": "fn",
+          "callee": "new_map",
+          "pos": "60:27",
+          "args": [],
+          "args_flow": []
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "as_str",
+      "source_name": "as_str",
+      "container": null,
+      "source_container": null,
+      "source_module_index": null,
+      "pos": "jsonx.capa:63:5",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "jv",
+          "type": "JsonValue",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "String",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "method",
+          "callee": "jv.as_string",
+          "pos": "64:11",
+          "args": [],
+          "args_flow": []
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "_capa_m2__first_license",
+      "source_name": "first_license",
+      "container": null,
+      "source_container": null,
+      "source_module_index": 2,
+      "pos": "ingest.capa:27:1",
+      "is_pub": false,
+      "doc": null,
+      "params": [
+        {
+          "name": "comp",
+          "type": "Map<String, JsonValue>",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "String",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "fn",
+          "callee": "arr_field",
+          "pos": "28:21",
+          "args": [
+            "comp",
+            "\"licenses\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "as_obj",
+          "pos": "29:21",
+          "args": [
+            "entry_jv"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "obj_field",
+          "pos": "30:19",
+          "args": [
+            "entry",
+            "\"license\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "str_field",
+          "pos": "31:18",
+          "args": [
+            "lic",
+            "\"id\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "str_field",
+          "pos": "34:20",
+          "args": [
+            "lic",
+            "\"name\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "_capa_m2__parse_component",
+      "source_name": "parse_component",
+      "container": null,
+      "source_container": null,
+      "source_module_index": 2,
+      "pos": "ingest.capa:39:1",
+      "is_pub": false,
+      "doc": null,
+      "params": [
+        {
+          "name": "jv",
+          "type": "JsonValue",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "Component",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "fn",
+          "callee": "as_obj",
+          "pos": "40:16",
+          "args": [
+            "jv"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "str_field",
+          "pos": "42:17",
+          "args": [
+            "comp",
+            "\"bom-ref\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "str_field",
+          "pos": "43:15",
+          "args": [
+            "comp",
+            "\"name\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "str_field",
+          "pos": "44:18",
+          "args": [
+            "comp",
+            "\"version\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "str_field",
+          "pos": "45:15",
+          "args": [
+            "comp",
+            "\"purl\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m2__first_license",
+          "pos": "46:18",
+          "args": [
+            "comp"
+          ],
+          "args_flow": [
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "parse_sbom",
+      "source_name": "parse_sbom",
+      "container": null,
+      "source_container": null,
+      "source_module_index": null,
+      "pos": "ingest.capa:52:5",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "text",
+          "type": "String",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "Result<ProjectSbom, GateError>",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "fn",
+          "callee": "parse_json",
+          "pos": "53:22",
+          "args": [
+            "text"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "Err",
+          "pos": "55:26",
+          "args": [
+            "BadSbom(\"invalid JSON: ${...}\")"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "BadSbom",
+          "pos": "55:30",
+          "args": [
+            "\"invalid JSON: ${...}\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "root.as_object",
+          "pos": "56:21",
+          "args": [],
+          "args_flow": []
+        },
+        {
+          "kind": "fn",
+          "callee": "Err",
+          "pos": "58:27",
+          "args": [
+            "BadSbom(\"top-level JSON value is not an object\")"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "BadSbom",
+          "pos": "58:31",
+          "args": [
+            "\"top-level JSON value is not an object\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "str_field",
+          "pos": "59:15",
+          "args": [
+            "obj",
+            "\"bomFormat\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "Err",
+          "pos": "61:16",
+          "args": [
+            "BadSbom(\"bomFormat is '${...}' (expected 'CycloneDX')\")"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "BadSbom",
+          "pos": "61:20",
+          "args": [
+            "\"bomFormat is '${...}' (expected 'CycloneDX')\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "obj_field",
+          "pos": "63:20",
+          "args": [
+            "obj",
+            "\"metadata\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "obj_field",
+          "pos": "64:26",
+          "args": [
+            "metadata",
+            "\"component\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "str_field",
+          "pos": "65:16",
+          "args": [
+            "meta_component",
+            "\"name\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "str_field",
+          "pos": "66:19",
+          "args": [
+            "meta_component",
+            "\"version\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "arr_field",
+          "pos": "70:20",
+          "args": [
+            "obj",
+            "\"components\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "components.push",
+          "pos": "71:9",
+          "args": [
+            "_capa_m2__parse_component(comp_jv)"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m2__parse_component",
+          "pos": "71:25",
+          "args": [
+            "comp_jv"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "Ok",
+          "pos": "72:12",
+          "args": [
+            "ProjectSbom { subject: subject, components: components }"
+          ],
+          "args_flow": [
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "load_credential",
+      "source_name": "load_credential",
+      "container": null,
+      "source_container": null,
+      "source_module_index": null,
+      "pos": "feed.capa:36:5",
+      "is_pub": true,
+      "doc": null,
+      "params": [],
+      "return_type": "FeedCredential",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [],
+      "declassifications": []
+    },
+    {
+      "name": "feed_request_header",
+      "source_name": "feed_request_header",
+      "container": null,
+      "source_container": null,
+      "source_module_index": null,
+      "pos": "feed.capa:43:5",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "creds",
+          "type": "FeedCredential",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "String",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [],
+      "declassifications": []
+    },
+    {
+      "name": "_capa_m4__affected_versions",
+      "source_name": "affected_versions",
+      "container": null,
+      "source_container": null,
+      "source_module_index": 4,
+      "pos": "feed.capa:48:1",
+      "is_pub": false,
+      "doc": null,
+      "params": [
+        {
+          "name": "adv",
+          "type": "Map<String, JsonValue>",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "List<String>",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "fn",
+          "callee": "arr_field",
+          "pos": "50:15",
+          "args": [
+            "adv",
+            "\"affected_versions\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "as_str",
+          "pos": "51:17",
+          "args": [
+            "jv"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "out.push",
+          "pos": "53:13",
+          "args": [
+            "s"
+          ],
+          "args_flow": [
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "_capa_m4__parse_advisory",
+      "source_name": "parse_advisory",
+      "container": null,
+      "source_container": null,
+      "source_module_index": 4,
+      "pos": "feed.capa:56:1",
+      "is_pub": false,
+      "doc": null,
+      "params": [
+        {
+          "name": "jv",
+          "type": "JsonValue",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "Advisory",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "fn",
+          "callee": "as_obj",
+          "pos": "57:15",
+          "args": [
+            "jv"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "str_field",
+          "pos": "59:13",
+          "args": [
+            "adv",
+            "\"id\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "str_field",
+          "pos": "60:18",
+          "args": [
+            "adv",
+            "\"package\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m4__affected_versions",
+          "pos": "61:19",
+          "args": [
+            "adv"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "str_field",
+          "pos": "62:18",
+          "args": [
+            "adv",
+            "\"summary\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "str_field",
+          "pos": "63:19",
+          "args": [
+            "adv",
+            "\"severity\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "tenths_field",
+          "pos": "64:22",
+          "args": [
+            "adv",
+            "\"cvss\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "parse_osv",
+      "source_name": "parse_osv",
+      "container": null,
+      "source_container": null,
+      "source_module_index": null,
+      "pos": "feed.capa:68:5",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "text",
+          "type": "String",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "Result<List<Advisory>, GateError>",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "fn",
+          "callee": "parse_json",
+          "pos": "69:22",
+          "args": [
+            "text"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "Err",
+          "pos": "71:26",
+          "args": [
+            "BadOsv(\"invalid JSON: ${...}\")"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "BadOsv",
+          "pos": "71:30",
+          "args": [
+            "\"invalid JSON: ${...}\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "root.as_object",
+          "pos": "72:21",
+          "args": [],
+          "args_flow": []
+        },
+        {
+          "kind": "fn",
+          "callee": "Err",
+          "pos": "74:27",
+          "args": [
+            "BadOsv(\"top-level JSON value is not an object\")"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "BadOsv",
+          "pos": "74:31",
+          "args": [
+            "\"top-level JSON value is not an object\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "arr_field",
+          "pos": "76:19",
+          "args": [
+            "obj",
+            "\"advisories\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "advisories.push",
+          "pos": "77:9",
+          "args": [
+            "_capa_m4__parse_advisory(adv_jv)"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m4__parse_advisory",
+          "pos": "77:25",
+          "args": [
+            "adv_jv"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "Ok",
+          "pos": "78:12",
+          "args": [
+            "advisories"
+          ],
+          "args_flow": [
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "_capa_m5__string_list",
+      "source_name": "string_list",
+      "container": null,
+      "source_container": null,
+      "source_module_index": 5,
+      "pos": "policy.capa:16:1",
+      "is_pub": false,
+      "doc": null,
+      "params": [
+        {
+          "name": "obj",
+          "type": "Map<String, JsonValue>",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "key",
+          "type": "String",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "List<String>",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "fn",
+          "callee": "arr_field",
+          "pos": "18:15",
+          "args": [
+            "obj",
+            "key"
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "as_str",
+          "pos": "19:17",
+          "args": [
+            "jv"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "out.push",
+          "pos": "21:13",
+          "args": [
+            "s"
+          ],
+          "args_flow": [
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "_capa_m5__pins",
+      "source_name": "pins",
+      "container": null,
+      "source_container": null,
+      "source_module_index": 5,
+      "pos": "policy.capa:26:1",
+      "is_pub": false,
+      "doc": null,
+      "params": [
+        {
+          "name": "obj",
+          "type": "Map<String, JsonValue>",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "List<Pin>",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "fn",
+          "callee": "arr_field",
+          "pos": "28:15",
+          "args": [
+            "obj",
+            "\"pinned_requirements\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "as_obj",
+          "pos": "29:21",
+          "args": [
+            "jv"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "str_field",
+          "pos": "30:19",
+          "args": [
+            "entry",
+            "\"package\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "str_field",
+          "pos": "31:19",
+          "args": [
+            "entry",
+            "\"version\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "out.push",
+          "pos": "33:13",
+          "args": [
+            "Pin { package: pkg, version: ver }"
+          ],
+          "args_flow": [
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "parse_policy",
+      "source_name": "parse_policy",
+      "container": null,
+      "source_container": null,
+      "source_module_index": null,
+      "pos": "policy.capa:36:5",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "text",
+          "type": "String",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "Result<Policy, GateError>",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "fn",
+          "callee": "parse_json",
+          "pos": "37:22",
+          "args": [
+            "text"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "Err",
+          "pos": "39:26",
+          "args": [
+            "BadPolicy(\"invalid JSON: ${...}\")"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "BadPolicy",
+          "pos": "39:30",
+          "args": [
+            "\"invalid JSON: ${...}\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "root.as_object",
+          "pos": "40:21",
+          "args": [],
+          "args_flow": []
+        },
+        {
+          "kind": "fn",
+          "callee": "Err",
+          "pos": "42:27",
+          "args": [
+            "BadPolicy(\"top-level JSON value is not an object\")"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "BadPolicy",
+          "pos": "42:31",
+          "args": [
+            "\"top-level JSON value is not an object\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "Ok",
+          "pos": "43:12",
+          "args": [
+            "Policy { name: str_field(obj, \"policy_name\"), max_cvss_tenths: tenths_field(o..."
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "str_field",
+          "pos": "44:15",
+          "args": [
+            "obj",
+            "\"policy_name\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "tenths_field",
+          "pos": "45:26",
+          "args": [
+            "obj",
+            "\"max_cvss\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m5__string_list",
+          "pos": "46:27",
+          "args": [
+            "obj",
+            "\"allowed_licenses\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m5__string_list",
+          "pos": "47:26",
+          "args": [
+            "obj",
+            "\"denied_licenses\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m5__string_list",
+          "pos": "48:26",
+          "args": [
+            "obj",
+            "\"banned_packages\""
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m5__pins",
+          "pos": "49:15",
+          "args": [
+            "obj"
+          ],
+          "args_flow": [
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "_capa_m6__contains",
+      "source_name": "contains",
+      "container": null,
+      "source_container": null,
+      "source_module_index": 6,
+      "pos": "eval.capa:21:1",
+      "is_pub": false,
+      "doc": null,
+      "params": [
+        {
+          "name": "items",
+          "type": "List<String>",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "target",
+          "type": "String",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "Bool",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [],
+      "declassifications": []
+    },
+    {
+      "name": "_capa_m6__coord",
+      "source_name": "coord",
+      "container": null,
+      "source_container": null,
+      "source_module_index": 6,
+      "pos": "eval.capa:27:1",
+      "is_pub": false,
+      "doc": null,
+      "params": [
+        {
+          "name": "c",
+          "type": "Component",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "String",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [],
+      "declassifications": []
+    },
+    {
+      "name": "_capa_m6__vuln_violations",
+      "source_name": "vuln_violations",
+      "container": null,
+      "source_container": null,
+      "source_module_index": 6,
+      "pos": "eval.capa:40:1",
+      "is_pub": false,
+      "doc": null,
+      "params": [
+        {
+          "name": "comps",
+          "type": "List<Component>",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "advs",
+          "type": "List<Advisory>",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "max_cvss_tenths",
+          "type": "Int",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "List<Violation>",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "method",
+          "callee": "a.affects",
+          "pos": "44:40",
+          "args": [
+            "c.version"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "out.push",
+          "pos": "46:21",
+          "args": [
+            "Violation { rule: \"vulnerability\", component: _capa_m6__coord(c), detail: \"${..."
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m6__coord",
+          "pos": "48:36",
+          "args": [
+            "c"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "cvss_str",
+          "pos": "49:65",
+          "args": [
+            "a.cvss_tenths"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "cvss_str",
+          "pos": "49:121",
+          "args": [
+            "max_cvss_tenths"
+          ],
+          "args_flow": [
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "_capa_m6__license_violations",
+      "source_name": "license_violations",
+      "container": null,
+      "source_container": null,
+      "source_module_index": 6,
+      "pos": "eval.capa:57:1",
+      "is_pub": false,
+      "doc": null,
+      "params": [
+        {
+          "name": "comps",
+          "type": "List<Component>",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "pol",
+          "type": "Policy",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "List<Violation>",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "method",
+          "callee": "out.push",
+          "pos": "62:13",
+          "args": [
+            "Violation { rule: \"license\", component: _capa_m6__coord(c), detail: \"componen..."
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m6__coord",
+          "pos": "64:28",
+          "args": [
+            "c"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m6__contains",
+          "pos": "67:14",
+          "args": [
+            "pol.denied_licenses",
+            "lic"
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "out.push",
+          "pos": "68:13",
+          "args": [
+            "Violation { rule: \"license\", component: _capa_m6__coord(c), detail: \"licence ..."
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m6__coord",
+          "pos": "70:28",
+          "args": [
+            "c"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "pol.allowed_licenses.length",
+          "pos": "73:14",
+          "args": [],
+          "args_flow": []
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m6__contains",
+          "pos": "73:56",
+          "args": [
+            "pol.allowed_licenses",
+            "lic"
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "out.push",
+          "pos": "74:13",
+          "args": [
+            "Violation { rule: \"license\", component: _capa_m6__coord(c), detail: \"licence ..."
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m6__coord",
+          "pos": "76:28",
+          "args": [
+            "c"
+          ],
+          "args_flow": [
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "_capa_m6__banned_violations",
+      "source_name": "banned_violations",
+      "container": null,
+      "source_container": null,
+      "source_module_index": 6,
+      "pos": "eval.capa:85:1",
+      "is_pub": false,
+      "doc": null,
+      "params": [
+        {
+          "name": "comps",
+          "type": "List<Component>",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "pol",
+          "type": "Policy",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "List<Violation>",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "fn",
+          "callee": "_capa_m6__contains",
+          "pos": "88:12",
+          "args": [
+            "pol.banned_packages",
+            "c.name"
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "out.push",
+          "pos": "89:13",
+          "args": [
+            "Violation { rule: \"banned\", component: _capa_m6__coord(c), detail: \"package '..."
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m6__coord",
+          "pos": "91:28",
+          "args": [
+            "c"
+          ],
+          "args_flow": [
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "_capa_m6__pin_violations",
+      "source_name": "pin_violations",
+      "container": null,
+      "source_container": null,
+      "source_module_index": 6,
+      "pos": "eval.capa:100:1",
+      "is_pub": false,
+      "doc": null,
+      "params": [
+        {
+          "name": "comps",
+          "type": "List<Component>",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "pol",
+          "type": "Policy",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "List<Violation>",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "method",
+          "callee": "out.push",
+          "pos": "105:17",
+          "args": [
+            "Violation { rule: \"pin\", component: _capa_m6__coord(c), detail: \"policy pins ..."
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m6__coord",
+          "pos": "107:32",
+          "args": [
+            "c"
+          ],
+          "args_flow": [
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "evaluate",
+      "source_name": "evaluate",
+      "container": null,
+      "source_container": null,
+      "source_module_index": null,
+      "pos": "eval.capa:116:5",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "project",
+          "type": "String",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "comps",
+          "type": "List<Component>",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "advs",
+          "type": "List<Advisory>",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "pol",
+          "type": "Policy",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "Decision",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "fn",
+          "callee": "_capa_m6__vuln_violations",
+          "pos": "118:14",
+          "args": [
+            "comps",
+            "advs",
+            "pol.max_cvss_tenths"
+          ],
+          "args_flow": [
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "violations.push",
+          "pos": "119:9",
+          "args": [
+            "v"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m6__banned_violations",
+          "pos": "120:14",
+          "args": [
+            "comps",
+            "pol"
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "violations.push",
+          "pos": "121:9",
+          "args": [
+            "v"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m6__license_violations",
+          "pos": "122:14",
+          "args": [
+            "comps",
+            "pol"
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "violations.push",
+          "pos": "123:9",
+          "args": [
+            "v"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m6__pin_violations",
+          "pos": "124:14",
+          "args": [
+            "comps",
+            "pol"
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "violations.push",
+          "pos": "125:9",
+          "args": [
+            "v"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "comps.length",
+          "pos": "128:26",
+          "args": [],
+          "args_flow": []
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "_capa_m7__json_escape",
+      "source_name": "json_escape",
+      "container": null,
+      "source_container": null,
+      "source_module_index": 7,
+      "pos": "report.capa:28:1",
+      "is_pub": false,
+      "doc": null,
+      "params": [
+        {
+          "name": "s",
+          "type": "String",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "String",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "method",
+          "callee": "s.length",
+          "pos": "31:15",
+          "args": [],
+          "args_flow": []
+        },
+        {
+          "kind": "method",
+          "callee": "s.substring",
+          "pos": "32:18",
+          "args": [
+            "i",
+            "i + 1"
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "build_report",
+      "source_name": "build_report",
+      "container": null,
+      "source_container": null,
+      "source_module_index": null,
+      "pos": "report.capa:52:5",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "d",
+          "type": "Decision",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "String",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "method",
+          "callee": "d.verdict",
+          "pos": "57:28",
+          "args": [],
+          "args_flow": []
+        },
+        {
+          "kind": "method",
+          "callee": "d.passed",
+          "pos": "58:8",
+          "args": [],
+          "args_flow": []
+        },
+        {
+          "kind": "method",
+          "callee": "d.violations.length",
+          "pos": "61:28",
+          "args": [],
+          "args_flow": []
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "_capa_m7__violation_json",
+      "source_name": "violation_json",
+      "container": null,
+      "source_container": null,
+      "source_module_index": 7,
+      "pos": "report.capa:79:1",
+      "is_pub": false,
+      "doc": null,
+      "params": [
+        {
+          "name": "v",
+          "type": "Violation",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "String",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "fn",
+          "callee": "_capa_m7__json_escape",
+          "pos": "81:34",
+          "args": [
+            "v.rule"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m7__json_escape",
+          "pos": "82:39",
+          "args": [
+            "v.component"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m7__json_escape",
+          "pos": "83:36",
+          "args": [
+            "v.detail"
+          ],
+          "args_flow": [
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "build_gate_json",
+      "source_name": "build_gate_json",
+      "container": null,
+      "source_container": null,
+      "source_module_index": null,
+      "pos": "report.capa:87:5",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "d",
+          "type": "Decision",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "String",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "method",
+          "callee": "d.passed",
+          "pos": "88:19",
+          "args": [],
+          "args_flow": []
+        },
+        {
+          "kind": "method",
+          "callee": "d.passed",
+          "pos": "89:21",
+          "args": [],
+          "args_flow": []
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m7__json_escape",
+          "pos": "93:33",
+          "args": [
+            "d.project"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "d.violations.length",
+          "pos": "95:39",
+          "args": [],
+          "args_flow": []
+        },
+        {
+          "kind": "method",
+          "callee": "d.violations.length",
+          "pos": "97:8",
+          "args": [],
+          "args_flow": []
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m7__violation_json",
+          "pos": "105:24",
+          "args": [
+            "v"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "_capa_m7__violation_json",
+          "pos": "108:27",
+          "args": [
+            "v"
+          ],
+          "args_flow": [
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "level_name",
+      "source_name": "level_name",
+      "container": null,
+      "source_container": null,
+      "source_module_index": null,
+      "pos": "vendor/capa_log/log.capa:31:5",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "level",
+          "type": "Int",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "String",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [],
+      "declassifications": []
+    },
+    {
+      "name": "make_stdio_logger",
+      "source_name": "make_stdio_logger",
+      "container": null,
+      "source_container": null,
+      "source_module_index": null,
+      "pos": "vendor/capa_log/stdio_logger.capa:32:5",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "stdio",
+          "type": "Stdio",
+          "consuming": false,
+          "is_capability": true,
+          "is_linear": false
+        },
+        {
+          "name": "min_level",
+          "type": "Int",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "StdioLogger",
+      "declared_capabilities": [
+        "Stdio"
+      ],
+      "transitively_reachable_capabilities": [
+        "Logger",
+        "Stdio"
+      ],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Net",
+        "Proc",
+        "Random",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [],
+      "declassifications": []
+    },
+    {
+      "name": "make_verbose_logger",
+      "source_name": "make_verbose_logger",
+      "container": null,
+      "source_container": null,
+      "source_module_index": null,
+      "pos": "vendor/capa_log/stdio_logger.capa:36:5",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "stdio",
+          "type": "Stdio",
+          "consuming": false,
+          "is_capability": true,
+          "is_linear": false
+        }
+      ],
+      "return_type": "StdioLogger",
+      "declared_capabilities": [
+        "Stdio"
+      ],
+      "transitively_reachable_capabilities": [
+        "Logger",
+        "Stdio"
+      ],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Net",
+        "Proc",
+        "Random",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [],
+      "declassifications": []
+    },
+    {
+      "name": "log",
+      "source_name": "log",
+      "container": "StdioLogger",
+      "source_container": "StdioLogger",
+      "source_module_index": null,
+      "pos": "vendor/capa_log/stdio_logger.capa:49:5",
+      "is_pub": false,
+      "doc": null,
+      "params": [
+        {
+          "name": "self",
+          "type": "Self",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "level",
+          "type": "Int",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "message",
+          "type": "String",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "Unit",
+      "declared_capabilities": [
+        "Logger"
+      ],
+      "transitively_reachable_capabilities": [
+        "Logger",
+        "Stdio"
+      ],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Net",
+        "Proc",
+        "Random",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "method",
+          "callee": "self.stdio.println",
+          "pos": "52:9",
+          "args": [
+            "\"[${...}] ${...}\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "level_name",
+          "pos": "52:32",
+          "args": [
+            "level"
+          ],
+          "args_flow": [
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "debug",
+      "source_name": "debug",
+      "container": "StdioLogger",
+      "source_container": "StdioLogger",
+      "source_module_index": null,
+      "pos": "vendor/capa_log/stdio_logger.capa:54:5",
+      "is_pub": false,
+      "doc": null,
+      "params": [
+        {
+          "name": "self",
+          "type": "Self",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "message",
+          "type": "String",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "Unit",
+      "declared_capabilities": [
+        "Logger"
+      ],
+      "transitively_reachable_capabilities": [
+        "Logger",
+        "Stdio"
+      ],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Net",
+        "Proc",
+        "Random",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "method",
+          "callee": "self.log",
+          "pos": "55:9",
+          "args": [
+            "DEBUG",
+            "message"
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "info",
+      "source_name": "info",
+      "container": "StdioLogger",
+      "source_container": "StdioLogger",
+      "source_module_index": null,
+      "pos": "vendor/capa_log/stdio_logger.capa:57:5",
+      "is_pub": false,
+      "doc": null,
+      "params": [
+        {
+          "name": "self",
+          "type": "Self",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "message",
+          "type": "String",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "Unit",
+      "declared_capabilities": [
+        "Logger"
+      ],
+      "transitively_reachable_capabilities": [
+        "Logger",
+        "Stdio"
+      ],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Net",
+        "Proc",
+        "Random",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "method",
+          "callee": "self.log",
+          "pos": "58:9",
+          "args": [
+            "INFO",
+            "message"
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "warn",
+      "source_name": "warn",
+      "container": "StdioLogger",
+      "source_container": "StdioLogger",
+      "source_module_index": null,
+      "pos": "vendor/capa_log/stdio_logger.capa:60:5",
+      "is_pub": false,
+      "doc": null,
+      "params": [
+        {
+          "name": "self",
+          "type": "Self",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "message",
+          "type": "String",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "Unit",
+      "declared_capabilities": [
+        "Logger"
+      ],
+      "transitively_reachable_capabilities": [
+        "Logger",
+        "Stdio"
+      ],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Net",
+        "Proc",
+        "Random",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "method",
+          "callee": "self.log",
+          "pos": "61:9",
+          "args": [
+            "WARN",
+            "message"
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "error",
+      "source_name": "error",
+      "container": "StdioLogger",
+      "source_container": "StdioLogger",
+      "source_module_index": null,
+      "pos": "vendor/capa_log/stdio_logger.capa:63:5",
+      "is_pub": false,
+      "doc": null,
+      "params": [
+        {
+          "name": "self",
+          "type": "Self",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "message",
+          "type": "String",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "Unit",
+      "declared_capabilities": [
+        "Logger"
+      ],
+      "transitively_reachable_capabilities": [
+        "Logger",
+        "Stdio"
+      ],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Net",
+        "Proc",
+        "Random",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "method",
+          "callee": "self.log",
+          "pos": "64:9",
+          "args": [
+            "ERROR",
+            "message"
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "run_gate",
+      "source_name": "run_gate",
+      "container": null,
+      "source_container": null,
+      "source_module_index": null,
+      "pos": "supplygate.capa:57:1",
+      "is_pub": false,
+      "doc": null,
+      "params": [
+        {
+          "name": "project_text",
+          "type": "String",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "osv_text",
+          "type": "String",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        },
+        {
+          "name": "policy_text",
+          "type": "String",
+          "consuming": false,
+          "is_capability": false,
+          "is_linear": false
+        }
+      ],
+      "return_type": "Result<Decision, GateError>",
+      "declared_capabilities": [],
+      "transitively_reachable_capabilities": [],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Fs",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Stdio",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "fn",
+          "callee": "parse_sbom",
+          "pos": "58:18",
+          "args": [
+            "project_text"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "parse_osv",
+          "pos": "59:18",
+          "args": [
+            "osv_text"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "parse_policy",
+          "pos": "60:18",
+          "args": [
+            "policy_text"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "load_credential",
+          "pos": "65:18",
+          "args": [],
+          "args_flow": []
+        },
+        {
+          "kind": "fn",
+          "callee": "feed_request_header",
+          "pos": "66:19",
+          "args": [
+            "creds"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "Ok",
+          "pos": "68:12",
+          "args": [
+            "evaluate(sbom.subject, sbom.components, advs, pol)"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "evaluate",
+          "pos": "68:15",
+          "args": [
+            "sbom.subject",
+            "sbom.components",
+            "advs",
+            "pol"
+          ],
+          "args_flow": [
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    },
+    {
+      "name": "main",
+      "source_name": "main",
+      "container": null,
+      "source_container": null,
+      "source_module_index": null,
+      "pos": "supplygate.capa:70:5",
+      "is_pub": true,
+      "doc": null,
+      "params": [
+        {
+          "name": "stdio",
+          "type": "Stdio",
+          "consuming": false,
+          "is_capability": true,
+          "is_linear": false
+        },
+        {
+          "name": "fs",
+          "type": "Fs",
+          "consuming": false,
+          "is_capability": true,
+          "is_linear": false
+        }
+      ],
+      "return_type": "()",
+      "declared_capabilities": [
+        "Stdio",
+        "Fs"
+      ],
+      "transitively_reachable_capabilities": [
+        "Fs",
+        "Stdio"
+      ],
+      "provably_excluded_capabilities": [
+        "Clock",
+        "Db",
+        "Env",
+        "Logger",
+        "Net",
+        "Proc",
+        "Random",
+        "Unsafe"
+      ],
+      "linear_obligations": {
+        "consumes": [],
+        "produces_linear": false
+      },
+      "has_unsafe": false,
+      "constant_time": false,
+      "attributes": [],
+      "calls": [
+        {
+          "kind": "fn",
+          "callee": "make_stdio_logger",
+          "pos": "71:18",
+          "args": [
+            "stdio",
+            "INFO"
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "logger.info",
+          "pos": "72:5",
+          "args": [
+            "\"SupplyGate: supply-chain compliance gate for CI/CD\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "fs.restrict_to",
+          "pos": "77:17",
+          "args": [
+            "\"data/\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "fs.restrict_to",
+          "pos": "78:18",
+          "args": [
+            "\"out/\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "fs_in.read",
+          "pos": "89:26",
+          "args": [
+            "\"data/osv.json\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "logger.error",
+          "pos": "92:13",
+          "args": [
+            "\"cannot read OSV dataset: ${...}\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "fs_in.read",
+          "pos": "94:29",
+          "args": [
+            "\"data/policy.json\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "logger.error",
+          "pos": "97:13",
+          "args": [
+            "\"cannot read policy: ${...}\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "fs_in.read",
+          "pos": "101:27",
+          "args": [
+            "\"data/project.cdx.json\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "logger.error",
+          "pos": "104:13",
+          "args": [
+            "\"cannot read project SBOM: ${...}\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "run_gate",
+          "pos": "106:11",
+          "args": [
+            "fail_sbom",
+            "osv_text",
+            "policy_text"
+          ],
+          "args_flow": [
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "fs_out.write",
+          "pos": "108:19",
+          "args": [
+            "\"out/report.txt\"",
+            "build_report(d)"
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "build_report",
+          "pos": "108:50",
+          "args": [
+            "d"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "logger.error",
+          "pos": "111:21",
+          "args": [
+            "\"cannot write report: ${...}\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "fs_out.write",
+          "pos": "113:19",
+          "args": [
+            "\"out/gate.json\"",
+            "build_gate_json(d)"
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "build_gate_json",
+          "pos": "113:49",
+          "args": [
+            "d"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "logger.error",
+          "pos": "116:21",
+          "args": [
+            "\"cannot write gate JSON: ${...}\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "logger.info",
+          "pos": "118:13",
+          "args": [
+            "\"project '${...}': ${...} components, ${...} violation(s) -> ${...}\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "d.violations.length",
+          "pos": "118:85",
+          "args": [],
+          "args_flow": []
+        },
+        {
+          "kind": "method",
+          "callee": "d.verdict",
+          "pos": "118:126",
+          "args": [],
+          "args_flow": []
+        },
+        {
+          "kind": "method",
+          "callee": "logger.info",
+          "pos": "119:13",
+          "args": [
+            "\"  report: ${...}   gate: ${...}\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "logger.error",
+          "pos": "121:13",
+          "args": [
+            "gate_error_message(e)"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "gate_error_message",
+          "pos": "121:26",
+          "args": [
+            "e"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "fs_in.read",
+          "pos": "125:27",
+          "args": [
+            "\"data/project_clean.cdx.json\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "logger.error",
+          "pos": "128:13",
+          "args": [
+            "\"cannot read clean project SBOM: ${...}\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "run_gate",
+          "pos": "130:11",
+          "args": [
+            "pass_sbom",
+            "osv_text",
+            "policy_text"
+          ],
+          "args_flow": [
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "fs_out.write",
+          "pos": "132:19",
+          "args": [
+            "\"out/report_clean.txt\"",
+            "build_report(d)"
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "build_report",
+          "pos": "132:56",
+          "args": [
+            "d"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "logger.error",
+          "pos": "135:21",
+          "args": [
+            "\"cannot write clean report: ${...}\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "fs_out.write",
+          "pos": "137:19",
+          "args": [
+            "\"out/gate_clean.json\"",
+            "build_gate_json(d)"
+          ],
+          "args_flow": [
+            null,
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "build_gate_json",
+          "pos": "137:55",
+          "args": [
+            "d"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "logger.error",
+          "pos": "140:21",
+          "args": [
+            "\"cannot write clean gate JSON: ${...}\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "logger.info",
+          "pos": "142:13",
+          "args": [
+            "\"project '${...}' (remediated): ${...} components, ${...} violation(s) -> ${...."
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "d.violations.length",
+          "pos": "142:98",
+          "args": [],
+          "args_flow": []
+        },
+        {
+          "kind": "method",
+          "callee": "d.verdict",
+          "pos": "142:139",
+          "args": [],
+          "args_flow": []
+        },
+        {
+          "kind": "method",
+          "callee": "logger.info",
+          "pos": "143:13",
+          "args": [
+            "\"  report: ${...}   gate: ${...}\""
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "logger.error",
+          "pos": "145:13",
+          "args": [
+            "gate_error_message(e)"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "fn",
+          "callee": "gate_error_message",
+          "pos": "145:26",
+          "args": [
+            "e"
+          ],
+          "args_flow": [
+            null
+          ]
+        },
+        {
+          "kind": "method",
+          "callee": "logger.info",
+          "pos": "148:5",
+          "args": [
+            "\"done. The @secret OSV-feed credential reached no output (proved by capa --ch..."
+          ],
+          "args_flow": [
+            null
+          ]
+        }
+      ],
+      "declassifications": []
+    }
+  ],
+  "operator_declared_grants": {
+    "trust_level": "operator-declared",
+    "note": "Authority declared by the operator at build/run time (e.g. --preopen). DISTINCT from the compiler-derived, program-proven capability surface; the compiler could not derive these grants.",
+    "preopens": []
+  },
+  "compiler_derived_path_arg_surface": {
+    "trust_level": "compiler-derived",
+    "note": "argv (env.args()) arguments the compiler PROVED reach an Fs / Net / Env sink, and whether read or write. A sound over-approximation (no reaching argument omitted; arg_index '*' when the concrete index is not statically determinate). Closures are covered SOUND BY CONSTRUCTION: a closure whose parameter reaches a sink is reported at '*' UNLESS the compiler proves it is applied only locally to non-argv values -- so a closure that escapes its frame (returned, passed to a helper, stored in an aggregate, or reached through a match/if arm or a name bound to one) fails closed, with no per-shape enumeration. Scope is EXHAUSTIVELY covered: the statement traversal descends into EVERY sub-scope that holds sub-statements -- if/while/for statement blocks, match-arm blocks, and lambda bodies, at any nesting depth -- so a binding or sink in any sub-block (including a match-arm block) is never skipped (pinned by a meta-test over the AST node inventory). RESIDUAL (the one honest gap, VALUE-FLOW only): a closure carried by a value the AST-level pass cannot statically tie back to a lambda -- re-extracted from a runtime container by key, or threaded through an opaque computed value -- may be under-reported. This does NOT grant authority -- a dynamic Fs/Net path still fail-closes in --wasi without --preopen; it is an auditable fact, distinct from operator_declared_grants.",
+    "arguments": []
+  },
+  "summary": {
+    "total_functions": 43,
+    "functions_with_capabilities": 8,
+    "functions_with_attributes": 0,
+    "functions_crossing_unsafe": 0,
+    "declassification_sites": 0,
+    "protocol_states": 0
+  }
+}

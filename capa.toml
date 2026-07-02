@@ -1,0 +1,26 @@
+# capa_supplygate - package manifest.
+#
+# SupplyGate is a supply-chain COMPLIANCE GATE for CI/CD. It reads three
+# local inputs (a project's CycloneDX SBOM, an offline OSV vulnerability
+# export, and the organisation's policy), decides PASS/FAIL for the build,
+# and emits its OWN capability SBOM as machine-verifiable proof of the
+# authority it holds.
+#
+# One dependency, pure and capability-free, vendored under vendor/ and
+# wired as a PATH dependency so its parent (vendor/) joins the module
+# search path:
+#
+#   capa_log - levelled logging over Stdio (the CI audit log lines).
+#
+# The dependency holds no authority of its own, so the SupplyGate
+# capability surface stays exactly what main.capa acquires: Fs and Stdio,
+# nothing more. The compiler's --manifest / --cyclonedx output proves it:
+# in particular there is no Net, so the tool provably cannot exfiltrate.
+
+[package]
+name = "capa_supplygate"
+version = "0.1.0"
+capa = ">=1.3.0"
+
+[dependencies.capa_log]
+path = "vendor/capa_log"

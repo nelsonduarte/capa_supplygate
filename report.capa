@@ -1,0 +1,111 @@
+// report.capa
+//
+// Build the two gate outputs from a Decision:
+//
+//   * a HUMAN report (text): the verdict, the component count, and every
+//     violation with its rule and reason;
+//   * a MACHINE gate decision (JSON): pass/fail plus the structured
+//     violation list, for a CI step to consume and gate the build on.
+//
+// Both are pure string construction over the public Decision. Nothing here
+// touches the @secret feed credential, so nothing can leak it; if any
+// @secret value reached this content, the Fs.write at the call site would
+// not compile. Deterministic and backend-identical: document order, no
+// clock, no randomness, fixed-point CVSS already rendered by the engine.
+//
+// Zero capabilities.
+
+import domain
+
+// =========================================================
+// JSON string escaping (minimal, deterministic)
+// =========================================================
+//
+// Escapes the characters JSON forbids raw in a string: backslash, double
+// quote, newline, carriage return and tab. The violation details are
+// tool-authored prose, so this small set is sufficient and keeps the output
+// identical on every backend.
+fun json_escape(s: String) -> String
+    var out = ""
+    var i = 0
+    while i < s.length()
+        let ch = s.substring(i, i + 1)
+        if ch == "\\"
+            out = "${out}\\\\"
+        elif ch == "\""
+            out = "${out}\\\""
+        elif ch == "\n"
+            out = "${out}\\n"
+        elif ch == "\r"
+            out = "${out}\\r"
+        elif ch == "\t"
+            out = "${out}\\t"
+        else
+            out = "${out}${ch}"
+        i = i + 1
+    return out
+
+// =========================================================
+// Human report
+// =========================================================
+
+pub fun build_report(d: Decision) -> String
+    var s = "SupplyGate compliance report\n"
+    s = "${s}============================\n\n"
+    s = "${s}project:    ${d.project}\n"
+    s = "${s}components:  ${d.component_count}\n"
+    s = "${s}verdict:    ${d.verdict()}\n\n"
+    if d.passed()
+        s = "${s}No policy violations. The build satisfies the supply-chain gate.\n"
+        return s
+    s = "${s}Violations (${d.violations.length()}):\n"
+    var n = 1
+    for v in d.violations
+        s = "${s}  ${n}. [${v.rule}] ${v.component}\n"
+        s = "${s}       ${v.detail}\n"
+        n = n + 1
+    s = "${s}\nThe build FAILS the supply-chain gate. Resolve every violation above.\n"
+    return s
+
+// =========================================================
+// Machine gate decision (JSON)
+// =========================================================
+//
+// Hand-built for deterministic key order and backend-identical bytes. The
+// shape a CI step consumes: {"gate": "pass|fail", "passed": bool,
+// "project": ..., "component_count": n, "violation_count": n,
+// "violations": [{rule, component, detail}, ...]}.
+
+fun violation_json(v: Violation) -> String
+    var s = "    {\n"
+    s = "${s}      \"rule\": \"${json_escape(v.rule)}\",\n"
+    s = "${s}      \"component\": \"${json_escape(v.component)}\",\n"
+    s = "${s}      \"detail\": \"${json_escape(v.detail)}\"\n"
+    s = "${s}    }"
+    return s
+
+pub fun build_gate_json(d: Decision) -> String
+    let gate = if d.passed() then "pass" else "fail"
+    let passed = if d.passed() then "true" else "false"
+    var s = "{\n"
+    s = "${s}  \"gate\": \"${gate}\",\n"
+    s = "${s}  \"passed\": ${passed},\n"
+    s = "${s}  \"project\": \"${json_escape(d.project)}\",\n"
+    s = "${s}  \"component_count\": ${d.component_count},\n"
+    s = "${s}  \"violation_count\": ${d.violations.length()},\n"
+    s = "${s}  \"violations\": ["
+    if d.violations.length() == 0
+        s = "${s}]\n"
+        s = "${s}}\n"
+        return s
+    s = "${s}\n"
+    var first = true
+    for v in d.violations
+        if first
+            s = "${s}${violation_json(v)}"
+            first = false
+        else
+            s = "${s},\n${violation_json(v)}"
+    s = "${s}\n  ]\n"
+    s = "${s}}\n"
+    return s

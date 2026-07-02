@@ -1,0 +1,20 @@
+SupplyGate compliance report
+============================
+
+project:    acme-checkout-service@2.4.0
+components:  12
+verdict:    FAIL
+
+Violations (5):
+  1. [vulnerability] jackson-databind@2.9.10
+       GHSA-mock-jack-2929 (HIGH, CVSS 8.1) exceeds policy ceiling CVSS 7.0: jackson-databind polymorphic deserialization remote code execution
+  2. [vulnerability] pyyaml@5.3
+       GHSA-mock-yaml-4410 (CRITICAL, CVSS 9.8) exceeds policy ceiling CVSS 7.0: PyYAML arbitrary code execution via full_load
+  3. [vulnerability] event-stream@3.3.6
+       GHSA-mock-estr-0001 (CRITICAL, CVSS 9.8) exceeds policy ceiling CVSS 7.0: event-stream shipped a malicious flatmap-stream dependency (supply-chain compromise)
+  4. [banned] event-stream@3.3.6
+       package 'event-stream' is explicitly banned by policy
+  5. [license] vendor-analytics@0.9.2
+       licence 'GPL-3.0-only' is on the policy deny list
+
+The build FAILS the supply-chain gate. Resolve every violation above.

@@ -1,0 +1,5662 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "supplygate.capa",
+  "documentNamespace": "https://capa-language.com/spdx/c491aeae-9f78-5bab-9840-54e4010b56e5",
+  "creationInfo": {
+    "created": "2026-01-01T00:00:00Z",
+    "creators": [
+      "Tool: capa-1.13.0"
+    ]
+  },
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-supplygate.capa",
+      "name": "supplygate.capa",
+      "versionInfo": "1.13.0",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:schema_version=1"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:summary:total_functions=43"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:summary:functions_with_capabilities=8"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:summary:functions_with_attributes=0"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:summary:functions_crossing_unsafe=0"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Builtin-supplygate.capa-Fs",
+      "name": "Fs",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=builtin-capability"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Builtin-supplygate.capa-Stdio",
+      "name": "Stdio",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=builtin-capability"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Cap-supplygate.capa-Logger",
+      "name": "Logger",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=capability"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:capability:method=log"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:capability:method=debug"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:capability:method=info"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:capability:method=warn"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:capability:method=error"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:capability:implementor=StdioLogger"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-Advisory-affects",
+      "name": "Advisory::affects",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=domain.capa:70:9"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=Bool"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:container=Advisory"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=self: Self"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=version: String"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-Decision-passed",
+      "name": "Decision::passed",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=domain.capa:112:9"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=Bool"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:container=Decision"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=self: Self"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-Decision-verdict",
+      "name": "Decision::verdict",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=domain.capa:115:9"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=String"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:container=Decision"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=self: Self"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-cvss-str",
+      "name": "cvss_str",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=domain.capa:124:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=String"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=tenths: Int"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-gate-error-message",
+      "name": "gate_error_message",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=domain.capa:139:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=String"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=e: GateError"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-obj-field",
+      "name": "obj_field",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=jsonx.capa:15:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=Map<String, JsonValue>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=obj: Map<String, JsonValue>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=key: String"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-arr-field",
+      "name": "arr_field",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=jsonx.capa:24:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=List<JsonValue>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=obj: Map<String, JsonValue>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=key: String"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-str-field",
+      "name": "str_field",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=jsonx.capa:37:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=String"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=obj: Map<String, JsonValue>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=key: String"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-tenths-field",
+      "name": "tenths_field",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=jsonx.capa:48:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=Int"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=obj: Map<String, JsonValue>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=key: String"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-as-obj",
+      "name": "as_obj",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=jsonx.capa:57:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=Map<String, JsonValue>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=jv: JsonValue"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-as-str",
+      "name": "as_str",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=jsonx.capa:63:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=String"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=jv: JsonValue"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa--capa-m2--first-license",
+      "name": "first_license",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=ingest.capa:27:1"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=String"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:source_module_index=2"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=comp: Map<String, JsonValue>"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa--capa-m2--parse-component",
+      "name": "parse_component",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=ingest.capa:39:1"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=Component"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:source_module_index=2"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=jv: JsonValue"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-parse-sbom",
+      "name": "parse_sbom",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=ingest.capa:52:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=Result<ProjectSbom, GateError>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=text: String"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-load-credential",
+      "name": "load_credential",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=feed.capa:36:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=FeedCredential"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-feed-request-header",
+      "name": "feed_request_header",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=feed.capa:43:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=String"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=creds: FeedCredential"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa--capa-m4--affected-versions",
+      "name": "affected_versions",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=feed.capa:48:1"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=List<String>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:source_module_index=4"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=adv: Map<String, JsonValue>"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa--capa-m4--parse-advisory",
+      "name": "parse_advisory",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=feed.capa:56:1"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=Advisory"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:source_module_index=4"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=jv: JsonValue"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-parse-osv",
+      "name": "parse_osv",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=feed.capa:68:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=Result<List<Advisory>, GateError>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=text: String"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa--capa-m5--string-list",
+      "name": "string_list",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=policy.capa:16:1"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=List<String>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:source_module_index=5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=obj: Map<String, JsonValue>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=key: String"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa--capa-m5--pins",
+      "name": "pins",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=policy.capa:26:1"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=List<Pin>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:source_module_index=5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=obj: Map<String, JsonValue>"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-parse-policy",
+      "name": "parse_policy",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=policy.capa:36:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=Result<Policy, GateError>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=text: String"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa--capa-m6--contains",
+      "name": "contains",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=eval.capa:21:1"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=Bool"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:source_module_index=6"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=items: List<String>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=target: String"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa--capa-m6--coord",
+      "name": "coord",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=eval.capa:27:1"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=String"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:source_module_index=6"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=c: Component"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa--capa-m6--vuln-violations",
+      "name": "vuln_violations",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=eval.capa:40:1"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=List<Violation>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:source_module_index=6"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=comps: List<Component>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=advs: List<Advisory>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=max_cvss_tenths: Int"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa--capa-m6--license-violations",
+      "name": "license_violations",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=eval.capa:57:1"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=List<Violation>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:source_module_index=6"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=comps: List<Component>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=pol: Policy"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa--capa-m6--banned-violations",
+      "name": "banned_violations",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=eval.capa:85:1"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=List<Violation>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:source_module_index=6"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=comps: List<Component>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=pol: Policy"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa--capa-m6--pin-violations",
+      "name": "pin_violations",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=eval.capa:100:1"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=List<Violation>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:source_module_index=6"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=comps: List<Component>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=pol: Policy"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-evaluate",
+      "name": "evaluate",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=eval.capa:116:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=Decision"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=project: String"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=comps: List<Component>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=advs: List<Advisory>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=pol: Policy"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa--capa-m7--json-escape",
+      "name": "json_escape",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=report.capa:28:1"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=String"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:source_module_index=7"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=s: String"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-build-report",
+      "name": "build_report",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=report.capa:52:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=String"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=d: Decision"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa--capa-m7--violation-json",
+      "name": "violation_json",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=report.capa:79:1"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=String"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:source_module_index=7"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=v: Violation"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-build-gate-json",
+      "name": "build_gate_json",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=report.capa:87:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=String"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=d: Decision"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-level-name",
+      "name": "level_name",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=vendor/capa_log/log.capa:31:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=String"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=level: Int"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-make-stdio-logger",
+      "name": "make_stdio_logger",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=vendor/capa_log/stdio_logger.capa:32:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=StdioLogger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:declared_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:transitively_reachable_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:transitively_reachable_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=stdio: Stdio [cap]"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=min_level: Int"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-make-verbose-logger",
+      "name": "make_verbose_logger",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=vendor/capa_log/stdio_logger.capa:36:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=StdioLogger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:declared_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:transitively_reachable_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:transitively_reachable_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=stdio: Stdio [cap]"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-StdioLogger-log",
+      "name": "StdioLogger::log",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=vendor/capa_log/stdio_logger.capa:49:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=Unit"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:container=StdioLogger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:declared_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:transitively_reachable_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:transitively_reachable_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=self: Self"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=level: Int"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=message: String"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-StdioLogger-debug",
+      "name": "StdioLogger::debug",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=vendor/capa_log/stdio_logger.capa:54:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=Unit"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:container=StdioLogger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:declared_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:transitively_reachable_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:transitively_reachable_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=self: Self"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=message: String"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-StdioLogger-info",
+      "name": "StdioLogger::info",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=vendor/capa_log/stdio_logger.capa:57:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=Unit"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:container=StdioLogger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:declared_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:transitively_reachable_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:transitively_reachable_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=self: Self"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=message: String"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-StdioLogger-warn",
+      "name": "StdioLogger::warn",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=vendor/capa_log/stdio_logger.capa:60:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=Unit"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:container=StdioLogger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:declared_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:transitively_reachable_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:transitively_reachable_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=self: Self"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=message: String"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-StdioLogger-error",
+      "name": "StdioLogger::error",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=vendor/capa_log/stdio_logger.capa:63:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=Unit"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:container=StdioLogger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:declared_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:transitively_reachable_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:transitively_reachable_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=self: Self"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=message: String"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-run-gate",
+      "name": "run_gate",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=supplygate.capa:57:1"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=Result<Decision, GateError>"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=project_text: String"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=osv_text: String"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=policy_text: String"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Fn-supplygate.capa-main",
+      "name": "main",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:kind=function"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:pos=supplygate.capa:70:5"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:return_type=()"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:has_unsafe=false"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:is_pub=true"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:declared_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:declared_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:transitively_reachable_capability=Fs"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:transitively_reachable_capability=Stdio"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Clock"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Db"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Env"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Logger"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Net"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Proc"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Random"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:provably_excluded_capability=Unsafe"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=stdio: Stdio [cap]"
+        },
+        {
+          "annotationDate": "2026-01-01T00:00:00Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: capa",
+          "comment": "capa:param=fs: Fs [cap]"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-supplygate.capa"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Builtin-supplygate.capa-Fs"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Builtin-supplygate.capa-Stdio"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Cap-supplygate.capa-Logger"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-Advisory-affects"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-Decision-passed"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-Decision-verdict"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-cvss-str"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-gate-error-message"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-obj-field"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-arr-field"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-str-field"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-tenths-field"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-as-obj"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-as-str"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m2--first-license"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m2--first-license",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-arr-field"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m2--first-license",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-as-obj"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m2--first-license",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-obj-field"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m2--first-license",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-str-field"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m2--parse-component"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m2--parse-component",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-as-obj"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m2--parse-component",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-str-field"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m2--parse-component",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m2--first-license"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-parse-sbom"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-parse-sbom",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-str-field"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-parse-sbom",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-obj-field"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-parse-sbom",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-arr-field"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-parse-sbom",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m2--parse-component"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-load-credential"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-feed-request-header"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m4--affected-versions"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m4--affected-versions",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-arr-field"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m4--affected-versions",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-as-str"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m4--parse-advisory"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m4--parse-advisory",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-as-obj"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m4--parse-advisory",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-str-field"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m4--parse-advisory",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m4--affected-versions"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m4--parse-advisory",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-tenths-field"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-parse-osv"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-parse-osv",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-arr-field"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-parse-osv",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m4--parse-advisory"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m5--string-list"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m5--string-list",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-arr-field"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m5--string-list",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-as-str"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m5--pins"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m5--pins",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-arr-field"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m5--pins",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-as-obj"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m5--pins",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-str-field"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-parse-policy"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-parse-policy",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-str-field"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-parse-policy",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-tenths-field"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-parse-policy",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m5--string-list"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-parse-policy",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m5--pins"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m6--contains"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m6--coord"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m6--vuln-violations"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m6--vuln-violations",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m6--coord"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m6--vuln-violations",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-cvss-str"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m6--license-violations"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m6--license-violations",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m6--coord"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m6--license-violations",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m6--contains"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m6--banned-violations"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m6--banned-violations",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m6--contains"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m6--banned-violations",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m6--coord"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m6--pin-violations"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m6--pin-violations",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m6--coord"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-evaluate"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-evaluate",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m6--vuln-violations"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-evaluate",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m6--banned-violations"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-evaluate",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m6--license-violations"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-evaluate",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m6--pin-violations"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m7--json-escape"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-build-report"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m7--violation-json"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa--capa-m7--violation-json",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m7--json-escape"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-build-gate-json"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-build-gate-json",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m7--json-escape"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-build-gate-json",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa--capa-m7--violation-json"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-level-name"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-make-stdio-logger"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-make-stdio-logger",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Cap-supplygate.capa-Logger"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-make-stdio-logger",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Builtin-supplygate.capa-Stdio"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-make-verbose-logger"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-make-verbose-logger",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Cap-supplygate.capa-Logger"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-make-verbose-logger",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Builtin-supplygate.capa-Stdio"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-StdioLogger-log"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-StdioLogger-log",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Cap-supplygate.capa-Logger"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-StdioLogger-log",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Builtin-supplygate.capa-Stdio"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-StdioLogger-log",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-level-name"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-StdioLogger-debug"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-StdioLogger-debug",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Cap-supplygate.capa-Logger"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-StdioLogger-debug",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Builtin-supplygate.capa-Stdio"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-StdioLogger-info"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-StdioLogger-info",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Cap-supplygate.capa-Logger"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-StdioLogger-info",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Builtin-supplygate.capa-Stdio"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-StdioLogger-warn"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-StdioLogger-warn",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Cap-supplygate.capa-Logger"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-StdioLogger-warn",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Builtin-supplygate.capa-Stdio"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-StdioLogger-error"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-StdioLogger-error",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Cap-supplygate.capa-Logger"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-StdioLogger-error",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Builtin-supplygate.capa-Stdio"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-run-gate"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-run-gate",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-parse-sbom"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-run-gate",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-parse-osv"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-run-gate",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-parse-policy"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-run-gate",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-load-credential"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-run-gate",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-feed-request-header"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-run-gate",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-evaluate"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-supplygate.capa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-main"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-main",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Builtin-supplygate.capa-Fs"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-main",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Builtin-supplygate.capa-Stdio"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-main",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-make-stdio-logger"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-main",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-run-gate"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-main",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-build-report"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-main",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-build-gate-json"
+    },
+    {
+      "spdxElementId": "SPDXRef-Fn-supplygate.capa-main",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Fn-supplygate.capa-gate-error-message"
+    }
+  ]
+}

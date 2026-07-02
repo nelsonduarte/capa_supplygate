@@ -1,0 +1,8 @@
+SupplyGate compliance report
+============================
+
+project:    acme-checkout-service@2.5.0
+components:  6
+verdict:    PASS
+
+No policy violations. The build satisfies the supply-chain gate.

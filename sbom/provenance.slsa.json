@@ -1,0 +1,93 @@
+{
+  "_type": "https://in-toto.io/Statement/v1",
+  "subject": [
+    {
+      "name": "domain.capa",
+      "digest": {
+        "sha256": "f12f4963afb13af97d8f9d457335528d76c68c75d151a8db7cf9ced5e4317cbd"
+      }
+    },
+    {
+      "name": "eval.capa",
+      "digest": {
+        "sha256": "5fa56fe64eb15147fbb413a3410b1bfce2a7567d89e99924128b25e7b5c87f12"
+      }
+    },
+    {
+      "name": "feed.capa",
+      "digest": {
+        "sha256": "6a04b68e59038c38ab502eeadf2ea0513572af2b2334af60ab74f38a6072dac9"
+      }
+    },
+    {
+      "name": "ingest.capa",
+      "digest": {
+        "sha256": "75c2542609ff6433077c414dae843ab712c73346e933416c16150d1f4d7c678d"
+      }
+    },
+    {
+      "name": "jsonx.capa",
+      "digest": {
+        "sha256": "f43a336c26aaf0e04ef38b901793c82b8b7f1c6d16518e6b907a554be85e4374"
+      }
+    },
+    {
+      "name": "policy.capa",
+      "digest": {
+        "sha256": "126dd3ea88c6f4b1ecc81425d7f43968db1809f7baf1f10a6806153e72140169"
+      }
+    },
+    {
+      "name": "report.capa",
+      "digest": {
+        "sha256": "8ecf41a2e00228e5d70b07a7b0f93f5c47637c687c961b3d093b0cb01025e5b7"
+      }
+    },
+    {
+      "name": "supplygate.capa",
+      "digest": {
+        "sha256": "8fb48554b4336622eece5b452c744ef35f980c05f018c1c53f05d25b4b79346d"
+      }
+    },
+    {
+      "name": "vendor/capa_log/log.capa",
+      "digest": {
+        "sha256": "29561c9555720b2d26967a641816798e09132ff13218993099dd8eabe84050f8"
+      }
+    },
+    {
+      "name": "vendor/capa_log/stdio_logger.capa",
+      "digest": {
+        "sha256": "ad871b7aa775f8d3304d079252c31b8ad25428ca177808e94a814d46ad1c2880"
+      }
+    }
+  ],
+  "predicateType": "https://slsa.dev/provenance/v1",
+  "predicate": {
+    "buildDefinition": {
+      "buildType": "https://capa-language.com/build/transpile-to-python/v1",
+      "externalParameters": {
+        "source": "supplygate.capa"
+      },
+      "internalParameters": {
+        "capaVersion": "1.13.0",
+        "target": "python>=3.10"
+      },
+      "resolvedDependencies": []
+    },
+    "runDetails": {
+      "builder": {
+        "id": "https://capa-language.com/cli",
+        "version": {
+          "capa": "1.13.0"
+        }
+      },
+      "metadata": {
+        "invocationId": "cdd21cee-8027-54b0-89a3-8635ea03a2cc",
+        "startedOn": "2026-01-01T00:00:00Z",
+        "finishedOn": "2026-01-01T00:00:00Z"
+      },
+      "byproducts": []
+    }
+  }
+}

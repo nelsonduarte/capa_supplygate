@@ -1,0 +1,50 @@
+// policy.capa
+//
+// Parse the organisation policy (JSON) into a typed Policy. Zero
+// capabilities: pure parsing over text the caller already read.
+//
+// The policy is the whole compliance contract in one file: the maximum
+// tolerated CVSS, the allowed/denied SPDX licence ids, the outright banned
+// packages, and the versions that must be pinned. SupplyGate turns each of
+// these into a gate rule in eval.capa.
+
+import domain
+import jsonx
+
+// Read a list-of-strings field (allowed_licenses, denied_licenses,
+// banned_packages) into a List<String>, skipping non-string entries.
+fun string_list(obj: Map<String, JsonValue>, key: String) -> List<String>
+    var out: List<String> = []
+    for jv in arr_field(obj, key)
+        let s = as_str(jv)
+        if s != ""
+            out.push(s)
+    return out
+
+// Read pinned_requirements[] into typed Pins. Entries missing a package or
+// version are skipped rather than treated as a malformed policy.
+fun pins(obj: Map<String, JsonValue>) -> List<Pin>
+    var out: List<Pin> = []
+    for jv in arr_field(obj, "pinned_requirements")
+        let entry = as_obj(jv)
+        let pkg = str_field(entry, "package")
+        let ver = str_field(entry, "version")
+        if pkg != "" and ver != ""
+            out.push(Pin { package: pkg, version: ver })
+    return out
+
+pub fun parse_policy(text: String) -> Result<Policy, GateError>
+    let root = match parse_json(text)
+        Ok(v)  -> v
+        Err(e) -> return Err(BadPolicy("invalid JSON: ${e}"))
+    let obj = match root.as_object()
+        Some(m) -> m
+        None    -> return Err(BadPolicy("top-level JSON value is not an object"))
+    return Ok(Policy {
+        name: str_field(obj, "policy_name"),
+        max_cvss_tenths: tenths_field(obj, "max_cvss"),
+        allowed_licenses: string_list(obj, "allowed_licenses"),
+        denied_licenses: string_list(obj, "denied_licenses"),
+        banned_packages: string_list(obj, "banned_packages"),
+        pins: pins(obj)
+    })

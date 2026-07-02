@@ -1,0 +1,148 @@
+// supplygate.capa
+//
+// The SupplyGate orchestrator, wired end to end:
+//
+//   read (Fs, read-only over data/)
+//     -> parse project SBOM   (ingest.capa, pure)
+//     -> parse OSV export     (feed.capa, pure)
+//     -> parse org policy     (policy.capa, pure)
+//     -> evaluate the gate    (eval.capa, pure)
+//     -> build report + JSON  (report.capa, pure)
+//     -> route outputs        (Fs write over out/)
+//     -> audit log line       (capa_log over Stdio)
+//
+// Capability discipline. main acquires exactly two capabilities, Fs and
+// Stdio, and immediately splits the Fs into two attenuated views:
+//
+//   * a READ-ONLY view restricted to data/ for the three inputs, and
+//   * a WRITE view restricted to out/ for the reports and gate decisions.
+//
+// main never acquires Net: SupplyGate reads LOCAL files, so a supply-chain
+// tool that itself cannot phone home. It also never acquires Env, Proc, Db,
+// Clock, Random or Unsafe. The capability SBOM (capa --manifest /
+// --cyclonedx) proves the surface: honest and minimal.
+//
+// Information flow. The OSV-feed credential (feed.FeedCredential.token) is
+// @secret. It is loaded here and would authenticate a live feed, but never
+// reaches the report, the gate JSON or the console. The compiler proves it;
+// leaky_supplygate.capa shows the rejection of a deliberate leak.
+//
+// Paths are inline string literals at every Fs sink, so the compiler fixes
+// the filesystem authority at compile time (constant propagation). That
+// keeps Env out of the surface and makes the WASI component's authority
+// statically known, needing no operator --preopen.
+
+import domain
+import ingest
+import feed
+import policy
+import eval
+import report
+import capa_log.log
+import capa_log.stdio_logger
+
+// Output paths, named once as consts for the human log lines. The Fs SINK
+// call sites below pass the SAME paths as INLINE string literals, because
+// the WASI static preopen ceiling const-propagates a literal at a sink slot
+// only when it is a literal there, not when it is a const read off a
+// restricted-Fs receiver. Keeping the sink argument a literal closes the
+// ceiling with no operator grant.
+const FAIL_REPORT_PATH: String = "out/report.txt"
+const FAIL_JSON_PATH:   String = "out/gate.json"
+const PASS_REPORT_PATH: String = "out/report_clean.txt"
+const PASS_JSON_PATH:   String = "out/gate_clean.json"
+
+// Evaluate one project's already-read inputs and return its Decision.
+// Threads Result across every fallible parse via the ``?`` operator.
+fun run_gate(project_text: String, osv_text: String, policy_text: String) -> Result<Decision, GateError>
+    let sbom   = ingest.parse_sbom(project_text)?
+    let advs   = feed.parse_osv(osv_text)?
+    let pol    = policy.parse_policy(policy_text)?
+
+    // Model the authenticated-feed step: the credential is loaded and the
+    // request header built. Both stay in the secret domain and are never
+    // emitted; they exist so the @secret surface is real, not decorative.
+    let creds  = feed.load_credential()
+    let _header = feed.feed_request_header(creds)
+
+    return Ok(eval.evaluate(sbom.subject, sbom.components, advs, pol))
+
+pub fun main(stdio: Stdio, fs: Fs)
+    let logger = stdio_logger.make_stdio_logger(stdio, INFO)
+    logger.info("SupplyGate: supply-chain compliance gate for CI/CD")
+
+    // Least privilege: one Fs in, two attenuated views out. The input view
+    // reads only data/; the output view writes only out/. Neither can touch
+    // the other's directory, the network, or anything else.
+    let fs_in = fs.restrict_to("data/")
+    let fs_out = fs.restrict_to("out/")
+
+    // Read the three shared inputs (inline literal at each read sink).
+    //
+    // Note on the error arms: each is written as ``logger.error(...)`` on
+    // its own line followed by a bare ``return``, rather than the more
+    // compact ``return logger.error(...)``. Returning the result of a
+    // user-defined capability method (logger.error returns Unit) directly
+    // as a match-arm value miscompiles on the Wasm backend today (a stack
+    // type mismatch in the emitted ``main``); calling then returning is the
+    // behaviour-identical form that compiles on all four backends.
+    let osv_text = match fs_in.read("data/osv.json")
+        Ok(s)  -> s
+        Err(e) ->
+            logger.error("cannot read OSV dataset: ${e}")
+            return
+    let policy_text = match fs_in.read("data/policy.json")
+        Ok(s)  -> s
+        Err(e) ->
+            logger.error("cannot read policy: ${e}")
+            return
+
+    // --- Project 1: the realistic build (expected FAIL) ---
+    let fail_sbom = match fs_in.read("data/project.cdx.json")
+        Ok(s)  -> s
+        Err(e) ->
+            logger.error("cannot read project SBOM: ${e}")
+            return
+    match run_gate(fail_sbom, osv_text, policy_text)
+        Ok(d) ->
+            match fs_out.write("out/report.txt", report.build_report(d))
+                Ok(_)  -> ()
+                Err(e) ->
+                    logger.error("cannot write report: ${e}")
+                    return
+            match fs_out.write("out/gate.json", report.build_gate_json(d))
+                Ok(_)  -> ()
+                Err(e) ->
+                    logger.error("cannot write gate JSON: ${e}")
+                    return
+            logger.info("project '${d.project}': ${d.component_count} components, ${d.violations.length()} violation(s) -> ${d.verdict()}")
+            logger.info("  report: ${FAIL_REPORT_PATH}   gate: ${FAIL_JSON_PATH}")
+        Err(e) ->
+            logger.error(gate_error_message(e))
+            return
+
+    // --- Project 2: the remediated build (expected PASS) ---
+    let pass_sbom = match fs_in.read("data/project_clean.cdx.json")
+        Ok(s)  -> s
+        Err(e) ->
+            logger.error("cannot read clean project SBOM: ${e}")
+            return
+    match run_gate(pass_sbom, osv_text, policy_text)
+        Ok(d) ->
+            match fs_out.write("out/report_clean.txt", report.build_report(d))
+                Ok(_)  -> ()
+                Err(e) ->
+                    logger.error("cannot write clean report: ${e}")
+                    return
+            match fs_out.write("out/gate_clean.json", report.build_gate_json(d))
+                Ok(_)  -> ()
+                Err(e) ->
+                    logger.error("cannot write clean gate JSON: ${e}")
+                    return
+            logger.info("project '${d.project}' (remediated): ${d.component_count} components, ${d.violations.length()} violation(s) -> ${d.verdict()}")
+            logger.info("  report: ${PASS_REPORT_PATH}   gate: ${PASS_JSON_PATH}")
+        Err(e) ->
+            logger.error(gate_error_message(e))
+            return
+
+    logger.info("done. The @secret OSV-feed credential reached no output (proved by capa --check).")

@@ -1,0 +1,64 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-06-01T00:00:00Z",
+    "component": {
+      "type": "application",
+      "name": "acme-checkout-service",
+      "version": "2.5.0"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/express@4.18.2",
+      "name": "express",
+      "version": "4.18.2",
+      "purl": "pkg:npm/express@4.18.2",
+      "licenses": [{ "license": { "id": "MIT" } }]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/requests@2.31.0",
+      "name": "requests",
+      "version": "2.31.0",
+      "purl": "pkg:pypi/requests@2.31.0",
+      "licenses": [{ "license": { "id": "Apache-2.0" } }]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/urllib3@2.2.1",
+      "name": "urllib3",
+      "version": "2.2.1",
+      "purl": "pkg:pypi/urllib3@2.2.1",
+      "licenses": [{ "license": { "id": "MIT" } }]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.15.4",
+      "name": "jackson-databind",
+      "version": "2.15.4",
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.15.4",
+      "licenses": [{ "license": { "id": "Apache-2.0" } }]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pyyaml@6.0.1",
+      "name": "pyyaml",
+      "version": "6.0.1",
+      "purl": "pkg:pypi/pyyaml@6.0.1",
+      "licenses": [{ "license": { "id": "MIT" } }]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:cargo/serde@1.0.188",
+      "name": "serde",
+      "version": "1.0.188",
+      "purl": "pkg:cargo/serde@1.0.188",
+      "licenses": [{ "license": { "id": "MIT" } }]
+    }
+  ]
+}

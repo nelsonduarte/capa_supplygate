@@ -1,0 +1,109 @@
+name: Release
+
+# Triggered by a signed v* tag push. Produces a source tarball,
+# generates a SLSA L2 build-provenance attestation through
+# Sigstore (keyless OIDC; published to the Rekor transparency
+# log via `actions/attest-build-provenance@v4`), and attaches
+# both to a new GitHub release.
+#
+# To verify a downloaded tarball on the consumer side:
+#
+#   gh attestation verify <repo>-<tag>.tar.gz --owner <owner>
+#
+# That confirms the tarball was built by this repo's CI on a tag
+# matching the SHA recorded in the Rekor entry.
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write       # create release + upload assets
+  id-token: write       # Sigstore OIDC for keyless signing
+  attestations: write   # publish SLSA provenance attestation
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout tag
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10  # v6.0.3
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref }}
+
+      - name: Verify tag is GPG-signed by the pinned publisher key
+        run: |
+          set -euo pipefail
+          PINNED_FPR="6C1D222D491FB88031E041A536CFB426101AA24B"
+
+          # Import the publisher key shipped in the repo.
+          gpg --import publisher.asc
+
+          # Fail unless the imported key carries the pinned primary-key
+          # fingerprint (importing publisher.asc alone proves nothing about
+          # identity, so anchor on the known publisher fingerprint).
+          if ! gpg --with-colons --fingerprint | grep -q "^fpr:::::::::${PINNED_FPR}:"; then
+            echo "ERROR: publisher.asc does not contain the pinned publisher fingerprint ${PINNED_FPR}" >&2
+            exit 1
+          fi
+
+          # Verify the tag and require the VALIDSIG primary-key fingerprint
+          # (the last field of the VALIDSIG status line) to equal the pinned
+          # fingerprint. This rejects signatures from any other key, even one
+          # the repo might ship.
+          RAW="$(git verify-tag --raw "${GITHUB_REF_NAME}" 2>&1)"
+          echo "${RAW}"
+          PRIMARY_FPR="$(printf '%s\n' "${RAW}" | awk '/^\[GNUPG:\] VALIDSIG/ { print $NF }')"
+          if [ "${PRIMARY_FPR}" != "${PINNED_FPR}" ]; then
+            echo "ERROR: tag ${GITHUB_REF_NAME} is not signed by the pinned publisher key" >&2
+            echo "       expected primary-key fingerprint ${PINNED_FPR}, got '${PRIMARY_FPR}'" >&2
+            exit 1
+          fi
+
+      - name: Build source tarball
+        id: tarball
+        run: |
+          NAME="${GITHUB_REPOSITORY##*/}-${GITHUB_REF_NAME}"
+          git archive --format=tar.gz --prefix="${NAME}/" HEAD > "${NAME}.tar.gz"
+          SHA256=$(sha256sum "${NAME}.tar.gz" | cut -d' ' -f1)
+          echo "name=${NAME}.tar.gz" >> "$GITHUB_OUTPUT"
+          echo "sha256=${SHA256}" >> "$GITHUB_OUTPUT"
+
+      - name: Generate SLSA L2 provenance
+        uses: actions/attest-build-provenance@a2bbfa25375fe432b6a289bc6b6cd05ecd0c4c32  # v4.1.0
+        with:
+          subject-path: ${{ steps.tarball.outputs.name }}
+
+      - name: Publish release
+        uses: softprops/action-gh-release@b4309332981a82ec1c5618f44dd2e27cc8bfbfda  # v3.0.0
+        with:
+          files: ${{ steps.tarball.outputs.name }}
+          generate_release_notes: false
+          body: |
+            First SLSA L2 attested release of `${{ github.event.repository.name }}`.
+
+            **Tarball:** `${{ steps.tarball.outputs.name }}`
+            **SHA-256:** `${{ steps.tarball.outputs.sha256 }}`
+
+            ## Verification
+
+            Tag signature (publisher identity):
+
+            ```
+            gpg --import publisher.asc
+            git verify-tag ${{ github.ref_name }}
+            ```
+
+            SLSA L2 build provenance (CI-attested, published to Sigstore Rekor):
+
+            ```
+            gh attestation verify ${{ steps.tarball.outputs.name }} \
+                --owner ${{ github.repository_owner }}
+            ```
+
+            Publisher GPG fingerprint:
+            `6C1D222D491FB88031E041A536CFB426101AA24B`
+
+            See `SECURITY.md` for the full provenance model.

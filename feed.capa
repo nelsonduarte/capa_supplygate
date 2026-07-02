@@ -1,0 +1,78 @@
+// feed.capa
+//
+// The vulnerability feed. Two responsibilities:
+//
+//   1. Parse the offline OSV export (JSON) into typed Advisory records.
+//   2. Model the authenticated-feed CREDENTIAL as a @secret the tool holds.
+//
+// SupplyGate is designed to consult an authenticated OSV feed. In this
+// build the feed is a local osv.json, but the tool still holds the bearer
+// token it would present to a live feed. That token is @secret: the
+// compiler proves it can never reach the public gate report, the gate JSON,
+// or the console. The ONLY sanctioned use is presenting it to the feed
+// (modelled by feed_request_header below, whose result is itself @secret
+// and is never emitted). leaky_supplygate.capa shows the compiler rejecting
+// a deliberate attempt to log or write the token.
+//
+// Zero capabilities: pure parsing plus pure credential handling.
+
+import domain
+import jsonx
+
+// The OSV-feed credential the tool holds. The token field is @secret, so
+// from any read of creds.token on, every derived value carries the
+// confidentiality label and the compiler forbids it from reaching a public
+// sink (the gate report, the gate JSON, the console) without an audited
+// declassify. SupplyGate never declassifies it: the credential is used only
+// to authenticate to the feed, never emitted. This is the sound, compiler-
+// checked pattern (a @secret struct field is a first-class IFC source).
+pub type FeedCredential {
+    token: @secret String
+}
+
+// In production the token comes from a secrets manager or a mounted CI
+// secret; here it is a fixed value so the demo is reproducible. The
+// authority to obtain it would be a real capability; modelled inline.
+pub fun load_credential() -> FeedCredential
+    return FeedCredential { token: "osv-feed-bearer-Z7Q2-do-not-log-9f8b1e42" }
+
+// The Authorization header the tool would present to an authenticated OSV
+// feed. It derives from creds.token, so the header is itself @secret and
+// stays in the secret domain. This models the real, sole use of the
+// credential; SupplyGate never writes or logs the result.
+pub fun feed_request_header(creds: FeedCredential) -> String
+    return "Authorization: Bearer ${creds.token}"
+
+// One advisory from the OSV export. Missing numeric CVSS becomes 0.0 (0
+// tenths); missing severity becomes "".
+fun affected_versions(adv: Map<String, JsonValue>) -> List<String>
+    var out: List<String> = []
+    for jv in arr_field(adv, "affected_versions")
+        let s = as_str(jv)
+        if s != ""
+            out.push(s)
+    return out
+
+fun parse_advisory(jv: JsonValue) -> Advisory
+    let adv = as_obj(jv)
+    return Advisory {
+        id: str_field(adv, "id"),
+        package: str_field(adv, "package"),
+        affected: affected_versions(adv),
+        summary: str_field(adv, "summary"),
+        severity: str_field(adv, "severity"),
+        cvss_tenths: tenths_field(adv, "cvss")
+    }
+
+// Parse the whole OSV export into a list of advisories.
+pub fun parse_osv(text: String) -> Result<List<Advisory>, GateError>
+    let root = match parse_json(text)
+        Ok(v)  -> v
+        Err(e) -> return Err(BadOsv("invalid JSON: ${e}"))
+    let obj = match root.as_object()
+        Some(m) -> m
+        None    -> return Err(BadOsv("top-level JSON value is not an object"))
+    var advisories: List<Advisory> = []
+    for adv_jv in arr_field(obj, "advisories")
+        advisories.push(parse_advisory(adv_jv))
+    return Ok(advisories)
