@@ -184,7 +184,7 @@ tool that ships its own machine-verifiable SBOM is the meta-message.
 | `data/policy.json` | sample organisation policy |
 | `out/` | sample generated reports + gate decisions |
 | `sbom/` | sample generated manifest + SBOMs + provenance |
-| `vendor/capa_log` | pure, capability-free path dependency (the CI audit log) |
+| `capa_log` (git dep) | pure, capability-free; fetched + GPG/SLSA-verified by `capa install` into `vendor/` (the CI audit log) |
 
 ## Run it
 
@@ -192,6 +192,15 @@ All commands use the local Capa compiler; substitute `python -m capa` for
 `capa` if the installed `capa` is not the build you intend.
 
 ```sh
+# One-time: fetch + verify the git dependency (needs capa >= 1.15.1).
+# `capa install` clones capa_log at its signed tag, verifies the tag's
+# GPG signature against the verify_key in capa.toml and its SLSA
+# provenance, writes capa.lock, and vendors the source under vendor/.
+# Import the publisher key first (see capa_log's SECURITY.md). capa_log
+# is pure and holds zero capabilities, so this adds a verified supply
+# chain without widening the {Fs, Stdio} surface.
+capa install
+
 # Type-check + information-flow check (clean: no leaks)
 capa --check supplygate.capa
 
@@ -233,14 +242,32 @@ capa --wasm --component --wasi --preopen data/:ro --run supplygate.capa
 
 ## Dependencies
 
-One dependency, **pure and capability-free**, vendored under `vendor/` and
-wired as a **path dependency** in `capa.toml`:
+One dependency, **pure and capability-free**, resolved as a **verified git
+dependency** in `capa.toml`:
 
 - `capa_log` - levelled logging over `Stdio` (the CI audit log lines).
 
-The dependency holds no authority of its own, so the SupplyGate capability
-surface stays exactly `{Fs, Stdio}`. The SBOM proves the dependency does not
-widen it. The SBOM/OSV/policy inputs are parsed with Capa's built-in JSON
+It is pinned to a **GPG-signed release tag** with the publisher's
+`verify_key`. `capa install` (needs `capa >= 1.15.1`) fetches it at that
+tag, verifies the tag's **GPG signature** against `verify_key` and its
+**SLSA build provenance** (via `gh attestation verify` against the public
+Sigstore log), records the resolved commit SHA in `capa.lock`, and vendors
+the source under `vendor/` (git-ignored, not committed). A force-pushed
+tag or a substituted commit is rejected before the code is ever compiled.
+
+```toml
+[dependencies.capa_log]
+git = "https://github.com/nelsonduarte/capa_log"
+tag = "v0.1.2"
+verify_key = "6C1D222D491FB88031E041A536CFB426101AA24B"
+```
+
+This is the verifiable supply chain Capa is about, made concrete: the
+dependency is not trusted by convention, it is **cryptographically verified
+at install time**, and its pinned, signed provenance is recorded in
+`capa.lock`. It holds no authority of its own, so the SupplyGate capability
+surface stays exactly `{Fs, Stdio}`, and the SBOM proves it does not widen
+it. The SBOM/OSV/policy inputs are parsed with Capa's built-in JSON
 support, so no parser dependency is needed.
 
 ## Beyond v1 (documented, not shipped)

@@ -6,9 +6,11 @@
 # and emits its OWN capability SBOM as machine-verifiable proof of the
 # authority it holds.
 #
-# One dependency, pure and capability-free, vendored under vendor/ and
-# wired as a PATH dependency so its parent (vendor/) joins the module
-# search path:
+# One dependency, pure and capability-free, resolved as a VERIFIED git
+# dependency. `capa install` fetches it at its GPG-signed tag, verifies
+# the tag signature against verify_key and its SLSA provenance, records
+# the pinned commit in capa.lock, and vendors it under vendor/ (git-
+# ignored):
 #
 #   capa_log - levelled logging over Stdio (the CI audit log lines).
 #
@@ -16,11 +18,14 @@
 # capability surface stays exactly what main.capa acquires: Fs and Stdio,
 # nothing more. The compiler's --manifest / --cyclonedx output proves it:
 # in particular there is no Net, so the tool provably cannot exfiltrate.
+# The verified supply chain is itself part of that story.
 
 [package]
 name = "capa_supplygate"
 version = "0.1.0"
-capa = ">=1.15.0"
+capa = ">=1.15.1"
 
 [dependencies.capa_log]
-path = "vendor/capa_log"
+git = "https://github.com/nelsonduarte/capa_log"
+tag = "v0.1.2"
+verify_key = "6C1D222D491FB88031E041A536CFB426101AA24B"
