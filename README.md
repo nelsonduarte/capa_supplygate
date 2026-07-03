@@ -223,11 +223,12 @@ The WASI run needs **no `--preopen`**: every filesystem path in the program
 is a string literal at its `Fs` sink (`"data/osv.json"`, `"out/gate.json"`,
 ...), which the compiler resolves by constant propagation, so the
 component's filesystem authority is fixed at compile time rather than granted
-by the operator. To grant authority explicitly instead (the operator-declared
-WASI `--dir` model), pass the directories:
+by the operator. The current WASI increment (b1) supports a **single**
+`--preopen` for dynamic (non-literal) `Fs` paths; SupplyGate needs none, but
+you can still pass one to preopen a directory explicitly:
 
 ```sh
-capa --wasm --component --wasi --preopen data/:ro --preopen out/:rw --run supplygate.capa
+capa --wasm --component --wasi --preopen data/:ro --run supplygate.capa
 ```
 
 ## Dependencies

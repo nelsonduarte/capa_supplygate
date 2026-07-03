@@ -46,7 +46,7 @@
     {
       "name": "supplygate.capa",
       "digest": {
-        "sha256": "8fb48554b4336622eece5b452c744ef35f980c05f018c1c53f05d25b4b79346d"
+        "sha256": "10e6274a0ed64cf64ab23c58f6fe4afe3e7b7eb6655335435bbd516b44113059"
       }
     },
     {
@@ -83,7 +83,7 @@
         }
       },
       "metadata": {
-        "invocationId": "cdd21cee-8027-54b0-89a3-8635ea03a2cc",
+        "invocationId": "ee54fb2f-6a5d-5387-9835-04d12e84799b",
         "startedOn": "2026-01-01T00:00:00Z",
         "finishedOn": "2026-01-01T00:00:00Z"
       },

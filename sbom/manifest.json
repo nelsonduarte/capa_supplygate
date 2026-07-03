@@ -3683,7 +3683,7 @@
         {
           "kind": "method",
           "callee": "fs_in.read",
-          "pos": "89:26",
+          "pos": "82:26",
           "args": [
             "\"data/osv.json\""
           ],
@@ -3694,7 +3694,7 @@
         {
           "kind": "method",
           "callee": "logger.error",
-          "pos": "92:13",
+          "pos": "84:26",
           "args": [
             "\"cannot read OSV dataset: ${...}\""
           ],
@@ -3705,7 +3705,7 @@
         {
           "kind": "method",
           "callee": "fs_in.read",
-          "pos": "94:29",
+          "pos": "85:29",
           "args": [
             "\"data/policy.json\""
           ],
@@ -3716,7 +3716,7 @@
         {
           "kind": "method",
           "callee": "logger.error",
-          "pos": "97:13",
+          "pos": "87:26",
           "args": [
             "\"cannot read policy: ${...}\""
           ],
@@ -3727,7 +3727,7 @@
         {
           "kind": "method",
           "callee": "fs_in.read",
-          "pos": "101:27",
+          "pos": "90:27",
           "args": [
             "\"data/project.cdx.json\""
           ],
@@ -3738,7 +3738,7 @@
         {
           "kind": "method",
           "callee": "logger.error",
-          "pos": "104:13",
+          "pos": "92:26",
           "args": [
             "\"cannot read project SBOM: ${...}\""
           ],
@@ -3749,7 +3749,7 @@
         {
           "kind": "fn",
           "callee": "run_gate",
-          "pos": "106:11",
+          "pos": "93:11",
           "args": [
             "fail_sbom",
             "osv_text",
@@ -3764,7 +3764,7 @@
         {
           "kind": "method",
           "callee": "fs_out.write",
-          "pos": "108:19",
+          "pos": "95:19",
           "args": [
             "\"out/report.txt\"",
             "build_report(d)"
@@ -3777,7 +3777,7 @@
         {
           "kind": "fn",
           "callee": "build_report",
-          "pos": "108:50",
+          "pos": "95:50",
           "args": [
             "d"
           ],
@@ -3788,7 +3788,7 @@
         {
           "kind": "method",
           "callee": "logger.error",
-          "pos": "111:21",
+          "pos": "97:34",
           "args": [
             "\"cannot write report: ${...}\""
           ],
@@ -3799,7 +3799,7 @@
         {
           "kind": "method",
           "callee": "fs_out.write",
-          "pos": "113:19",
+          "pos": "98:19",
           "args": [
             "\"out/gate.json\"",
             "build_gate_json(d)"
@@ -3812,7 +3812,7 @@
         {
           "kind": "fn",
           "callee": "build_gate_json",
-          "pos": "113:49",
+          "pos": "98:49",
           "args": [
             "d"
           ],
@@ -3823,7 +3823,7 @@
         {
           "kind": "method",
           "callee": "logger.error",
-          "pos": "116:21",
+          "pos": "100:34",
           "args": [
             "\"cannot write gate JSON: ${...}\""
           ],
@@ -3834,7 +3834,7 @@
         {
           "kind": "method",
           "callee": "logger.info",
-          "pos": "118:13",
+          "pos": "101:13",
           "args": [
             "\"project '${...}': ${...} components, ${...} violation(s) -> ${...}\""
           ],
@@ -3845,21 +3845,21 @@
         {
           "kind": "method",
           "callee": "d.violations.length",
-          "pos": "118:85",
+          "pos": "101:85",
           "args": [],
           "args_flow": []
         },
         {
           "kind": "method",
           "callee": "d.verdict",
-          "pos": "118:126",
+          "pos": "101:126",
           "args": [],
           "args_flow": []
         },
         {
           "kind": "method",
           "callee": "logger.info",
-          "pos": "119:13",
+          "pos": "102:13",
           "args": [
             "\"  report: ${...}   gate: ${...}\""
           ],
@@ -3870,7 +3870,7 @@
         {
           "kind": "method",
           "callee": "logger.error",
-          "pos": "121:13",
+          "pos": "103:26",
           "args": [
             "gate_error_message(e)"
           ],
@@ -3881,7 +3881,7 @@
         {
           "kind": "fn",
           "callee": "gate_error_message",
-          "pos": "121:26",
+          "pos": "103:39",
           "args": [
             "e"
           ],
@@ -3892,7 +3892,7 @@
         {
           "kind": "method",
           "callee": "fs_in.read",
-          "pos": "125:27",
+          "pos": "106:27",
           "args": [
             "\"data/project_clean.cdx.json\""
           ],
@@ -3903,7 +3903,7 @@
         {
           "kind": "method",
           "callee": "logger.error",
-          "pos": "128:13",
+          "pos": "108:26",
           "args": [
             "\"cannot read clean project SBOM: ${...}\""
           ],
@@ -3914,7 +3914,7 @@
         {
           "kind": "fn",
           "callee": "run_gate",
-          "pos": "130:11",
+          "pos": "109:11",
           "args": [
             "pass_sbom",
             "osv_text",
@@ -3929,7 +3929,7 @@
         {
           "kind": "method",
           "callee": "fs_out.write",
-          "pos": "132:19",
+          "pos": "111:19",
           "args": [
             "\"out/report_clean.txt\"",
             "build_report(d)"
@@ -3942,7 +3942,7 @@
         {
           "kind": "fn",
           "callee": "build_report",
-          "pos": "132:56",
+          "pos": "111:56",
           "args": [
             "d"
           ],
@@ -3953,7 +3953,7 @@
         {
           "kind": "method",
           "callee": "logger.error",
-          "pos": "135:21",
+          "pos": "113:34",
           "args": [
             "\"cannot write clean report: ${...}\""
           ],
@@ -3964,7 +3964,7 @@
         {
           "kind": "method",
           "callee": "fs_out.write",
-          "pos": "137:19",
+          "pos": "114:19",
           "args": [
             "\"out/gate_clean.json\"",
             "build_gate_json(d)"
@@ -3977,7 +3977,7 @@
         {
           "kind": "fn",
           "callee": "build_gate_json",
-          "pos": "137:55",
+          "pos": "114:55",
           "args": [
             "d"
           ],
@@ -3988,7 +3988,7 @@
         {
           "kind": "method",
           "callee": "logger.error",
-          "pos": "140:21",
+          "pos": "116:34",
           "args": [
             "\"cannot write clean gate JSON: ${...}\""
           ],
@@ -3999,7 +3999,7 @@
         {
           "kind": "method",
           "callee": "logger.info",
-          "pos": "142:13",
+          "pos": "117:13",
           "args": [
             "\"project '${...}' (remediated): ${...} components, ${...} violation(s) -> ${...."
           ],
@@ -4010,21 +4010,21 @@
         {
           "kind": "method",
           "callee": "d.violations.length",
-          "pos": "142:98",
+          "pos": "117:98",
           "args": [],
           "args_flow": []
         },
         {
           "kind": "method",
           "callee": "d.verdict",
-          "pos": "142:139",
+          "pos": "117:139",
           "args": [],
           "args_flow": []
         },
         {
           "kind": "method",
           "callee": "logger.info",
-          "pos": "143:13",
+          "pos": "118:13",
           "args": [
             "\"  report: ${...}   gate: ${...}\""
           ],
@@ -4035,7 +4035,7 @@
         {
           "kind": "method",
           "callee": "logger.error",
-          "pos": "145:13",
+          "pos": "119:26",
           "args": [
             "gate_error_message(e)"
           ],
@@ -4046,7 +4046,7 @@
         {
           "kind": "fn",
           "callee": "gate_error_message",
-          "pos": "145:26",
+          "pos": "119:39",
           "args": [
             "e"
           ],
@@ -4057,7 +4057,7 @@
         {
           "kind": "method",
           "callee": "logger.info",
-          "pos": "148:5",
+          "pos": "121:5",
           "args": [
             "\"done. The @secret OSV-feed credential reached no output (proved by capa --ch..."
           ],

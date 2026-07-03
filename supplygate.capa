@@ -77,72 +77,45 @@ pub fun main(stdio: Stdio, fs: Fs)
     let fs_in = fs.restrict_to("data/")
     let fs_out = fs.restrict_to("out/")
 
-    // Read the three shared inputs (inline literal at each read sink).
-    //
-    // Note on the error arms: each is written as ``logger.error(...)`` on
-    // its own line followed by a bare ``return``, rather than the more
-    // compact ``return logger.error(...)``. Returning the result of a
-    // user-defined capability method (logger.error returns Unit) directly
-    // as a match-arm value miscompiles on the Wasm backend today (a stack
-    // type mismatch in the emitted ``main``); calling then returning is the
-    // behaviour-identical form that compiles on all four backends.
+    // Read the three shared inputs (inline literal at each read sink). Each
+    // error arm returns the Unit result of ``logger.error(...)`` directly.
     let osv_text = match fs_in.read("data/osv.json")
         Ok(s)  -> s
-        Err(e) ->
-            logger.error("cannot read OSV dataset: ${e}")
-            return
+        Err(e) -> return logger.error("cannot read OSV dataset: ${e}")
     let policy_text = match fs_in.read("data/policy.json")
         Ok(s)  -> s
-        Err(e) ->
-            logger.error("cannot read policy: ${e}")
-            return
+        Err(e) -> return logger.error("cannot read policy: ${e}")
 
     // --- Project 1: the realistic build (expected FAIL) ---
     let fail_sbom = match fs_in.read("data/project.cdx.json")
         Ok(s)  -> s
-        Err(e) ->
-            logger.error("cannot read project SBOM: ${e}")
-            return
+        Err(e) -> return logger.error("cannot read project SBOM: ${e}")
     match run_gate(fail_sbom, osv_text, policy_text)
         Ok(d) ->
             match fs_out.write("out/report.txt", report.build_report(d))
                 Ok(_)  -> ()
-                Err(e) ->
-                    logger.error("cannot write report: ${e}")
-                    return
+                Err(e) -> return logger.error("cannot write report: ${e}")
             match fs_out.write("out/gate.json", report.build_gate_json(d))
                 Ok(_)  -> ()
-                Err(e) ->
-                    logger.error("cannot write gate JSON: ${e}")
-                    return
+                Err(e) -> return logger.error("cannot write gate JSON: ${e}")
             logger.info("project '${d.project}': ${d.component_count} components, ${d.violations.length()} violation(s) -> ${d.verdict()}")
             logger.info("  report: ${FAIL_REPORT_PATH}   gate: ${FAIL_JSON_PATH}")
-        Err(e) ->
-            logger.error(gate_error_message(e))
-            return
+        Err(e) -> return logger.error(gate_error_message(e))
 
     // --- Project 2: the remediated build (expected PASS) ---
     let pass_sbom = match fs_in.read("data/project_clean.cdx.json")
         Ok(s)  -> s
-        Err(e) ->
-            logger.error("cannot read clean project SBOM: ${e}")
-            return
+        Err(e) -> return logger.error("cannot read clean project SBOM: ${e}")
     match run_gate(pass_sbom, osv_text, policy_text)
         Ok(d) ->
             match fs_out.write("out/report_clean.txt", report.build_report(d))
                 Ok(_)  -> ()
-                Err(e) ->
-                    logger.error("cannot write clean report: ${e}")
-                    return
+                Err(e) -> return logger.error("cannot write clean report: ${e}")
             match fs_out.write("out/gate_clean.json", report.build_gate_json(d))
                 Ok(_)  -> ()
-                Err(e) ->
-                    logger.error("cannot write clean gate JSON: ${e}")
-                    return
+                Err(e) -> return logger.error("cannot write clean gate JSON: ${e}")
             logger.info("project '${d.project}' (remediated): ${d.component_count} components, ${d.violations.length()} violation(s) -> ${d.verdict()}")
             logger.info("  report: ${PASS_REPORT_PATH}   gate: ${PASS_JSON_PATH}")
-        Err(e) ->
-            logger.error(gate_error_message(e))
-            return
+        Err(e) -> return logger.error(gate_error_message(e))
 
     logger.info("done. The @secret OSV-feed credential reached no output (proved by capa --check).")
