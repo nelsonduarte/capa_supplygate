@@ -1,5 +1,5 @@
 #!/bin/sh
-# Regenerate the SupplyGate machine-verifiable artefacts:
+# Regenerate the SupplyGate machine-readable artefacts:
 #
 #   out/report.txt          the human gate report for the realistic build (FAIL)
 #   out/gate.json           the machine gate decision for that build
@@ -35,7 +35,7 @@ mkdir -p out sbom
 # Run the gate (Python backend) to produce the reports + gate decisions.
 capa --run supplygate.capa
 
-# Emit the compiler-side proof artefacts.
+# Emit the compiler-side artefacts.
 capa --manifest   supplygate.capa > sbom/manifest.json
 capa --cyclonedx  supplygate.capa > sbom/sbom.cyclonedx.json
 capa --spdx       supplygate.capa > sbom/sbom.spdx.json
