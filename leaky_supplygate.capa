@@ -14,9 +14,9 @@
 // opts into @strict_ifc, so such a flow is a compile error and the program
 // refuses to build.
 //
-// The point: SupplyGate cannot leak its own credentials. A supply-chain
-// tool that reads everyone's SBOMs must not itself become the exfiltration
-// path, and here that is a machine-checked fact, not a promise.
+// The point: a supply-chain tool that reads everyone's SBOMs must not
+// itself become the exfiltration path, and each flow below is detected
+// and refused under @strict_ifc.
 
 import domain
 import feed

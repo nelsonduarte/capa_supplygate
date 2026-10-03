@@ -8,8 +8,8 @@
 // SupplyGate is designed to consult an authenticated OSV feed. In this
 // build the feed is a local osv.json, but the tool still holds the bearer
 // token it would present to a live feed. That token is @secret: the
-// compiler proves it can never reach the public gate report, the gate JSON,
-// or the console. The ONLY sanctioned use is presenting it to the feed
+// compiler reports a flow it detects from it to the public gate report, the
+// gate JSON, or the console. The sanctioned use is presenting it to the feed
 // (modelled by feed_request_header below, whose result is itself @secret
 // and is never emitted). leaky_supplygate.capa shows the compiler rejecting
 // a deliberate attempt to log or write the token.

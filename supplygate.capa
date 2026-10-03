@@ -17,15 +17,15 @@
 //   * a READ-ONLY view restricted to data/ for the three inputs, and
 //   * a WRITE view restricted to out/ for the reports and gate decisions.
 //
-// main never acquires Net: SupplyGate reads LOCAL files, so a supply-chain
-// tool that itself cannot phone home. It also never acquires Env, Proc, Db,
-// Clock, Random or Unsafe. The capability SBOM (capa --manifest /
-// --cyclonedx) proves the surface: honest and minimal.
+// main does not declare Net: SupplyGate reads LOCAL files. It also does not
+// declare Env, Proc, Db, Clock, Random or Unsafe; its manifest entry
+// (capa --manifest) lists them among the excluded capabilities, and the
+// compiler refuses a call on one of them in a function without it in scope.
 //
 // Information flow. The OSV-feed credential (feed.FeedCredential.token) is
-// @secret. It is loaded here and would authenticate a live feed, but never
-// reaches the report, the gate JSON or the console. The compiler proves it;
-// leaky_supplygate.capa shows the rejection of a deliberate leak.
+// @secret. It is loaded here and would authenticate a live feed; the
+// compiler reports a flow it detects from it to the report, the gate JSON
+// or the console. leaky_supplygate.capa shows the strict rejection.
 //
 // Paths are inline string literals at every Fs sink, so the compiler fixes
 // the filesystem authority at compile time (constant propagation). That

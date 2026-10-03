@@ -12,13 +12,14 @@
 #
 # The reports and gate decisions are produced by RUNNING SupplyGate; the
 # SBOM family is EMITTED BY THE COMPILER from the same source. Together they
-# are the proof: SupplyGate states the verdict, and the compiler proves the
-# tool's own surface (it only read the inputs; it holds no Net, and its
-# @secret feed credential reaches no output).
+# are the evidence: SupplyGate states the verdict, and the compiler records
+# the tool's own surface (main declares Fs and Stdio, no Net) and checks the
+# flows of its @secret feed credential.
 #
 # Determinism comes from SOURCE_DATE_EPOCH (reproducible-builds.org): the
-# compiler stamps the SBOM build time from this fixed instant, so the
-# artefacts are byte-reproducible. Bump it by writing a new UTC epoch to
+# compiler stamps the SBOM build time from this fixed instant. The
+# compiler's tests pin byte-identical output for repeated runs; a
+# rebuild-and-diff is a check to run, not a guarantee. Bump it by writing a new UTC epoch to
 # sbom/SOURCE_DATE_EPOCH and rerunning this script.
 #
 # Run every Capa invocation through the LOCAL compiler:

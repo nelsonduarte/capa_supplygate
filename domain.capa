@@ -8,19 +8,19 @@
 // local inputs (a project's CycloneDX SBOM, an offline OSV vulnerability
 // export, and the organisation's policy), cross-references them, and
 // decides PASS or FAIL for the build. It then emits its OWN capability
-// SBOM as proof of what authority it holds.
+// SBOM as the record of what authority it holds.
 //
 // The Capa angle lives in two independent, compiler-checked properties:
 //
 //   * INFORMATION FLOW. The tool holds an OSV-feed API token as a
-//     @secret. The compiler proves that token can never reach the public
-//     gate report or the machine-readable gate decision. leaky_supplygate
-//     .capa shows the compiler rejecting a deliberate leak of exactly it.
+//     @secret. The compiler reports a flow it detects from that token to
+//     the public gate report or the machine-readable gate decision. leaky_
+//     supplygate.capa shows the strict rejection of a deliberate leak.
 //
-//   * CAPABILITY DISCIPLINE. main acquires exactly {Fs, Stdio}. It reads
-//     local files, so it never acquires Net. The capability SBOM
-//     (capa --manifest / --cyclonedx) proves the surface: a supply-chain
-//     tool that cannot itself exfiltrate.
+//   * CAPABILITY DISCIPLINE. main declares exactly {Fs, Stdio}. It reads
+//     local files, so it does not declare Net, and the compiler refuses a
+//     call on Net in a function that does not have it in scope. The
+//     manifest (capa --manifest) records the surface.
 
 // =========================================================
 // The OSV-feed credential (a @secret the tool holds)
