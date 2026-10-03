@@ -1,17 +1,18 @@
 # SupplyGate
 
 A supply-chain **compliance gate for CI/CD** that decides **PASS or FAIL**
-for a build and emits its **own capability SBOM as proof**. SupplyGate reads
+for a build and emits its **own capability SBOM as evidence**. SupplyGate reads
 a project's SBOM, an offline vulnerability feed and your organisation's
 policy, cross-references them, and produces a machine-readable gate decision
-your pipeline can block on. It then proves, with a compiler-emitted SBOM,
-that it only read those inputs and holds no authority to exfiltrate them.
+your pipeline can block on. It then shows, with a compiler-emitted SBOM,
+which capabilities it holds: `Fs` and `Stdio`, and no `Net`.
 
-The proof is not a policy document or a code-review sign-off. It is the
+The evidence is not a policy document or a code-review sign-off. It is the
 output of a compiler: the [Capa](https://github.com/nelsonduarte)
-information-flow analysis rejects any path from the tool's own credentials
-to an output, and the capability SBOM Capa emits enumerates exactly what
-authority the tool holds (`{Fs, Stdio}`, provably no `Net`).
+information-flow check reports a path it detects from the tool's own
+credentials to an output, and reports none for this program, and the
+capability SBOM Capa emits lists the capabilities the tool holds
+(`{Fs, Stdio}`, and no `Net`).
 
 ## The problem
 
@@ -26,10 +27,11 @@ proves that tool cannot leak what it sees or phone home.
 
 SupplyGate shows a different model. The gate decision is real (it evaluates
 four policy rules against a vulnerability feed), and the **gate tool's own
-trustworthiness is machine-checked**: it cannot leak its feed credential
-(information-flow control) and it cannot reach the network (capability
-discipline). Both facts are compiler-enforced and shipped as an SBOM an
-auditor can re-verify.
+authority is machine-checked**: the information-flow check reports no
+flow from its feed credential to an output, and no function in the tool
+holds `Net` (capability discipline). Both results come from
+the compiler, and the capability side ships as an SBOM an auditor can
+regenerate.
 
 ## What SupplyGate does
 
@@ -84,12 +86,12 @@ advisory at CVSS 6.5, which is **below** the 7.0 ceiling and does not fire;
 `lodash@4.17.19` has an advisory that affects only older versions and does
 not fire. Only genuine, policy-exceeding findings fail the gate.
 
-## Why the tool's own trust is machine-verifiable
+## What the compiler checks about the tool itself
 
-Two independent, compiler-enforced properties, plus the SBOM that records
-them.
+Two independent compiler checks, plus the SBOM that records the capability
+side.
 
-### 1. Information-flow control: the gate cannot leak its credentials
+### 1. Information-flow control: the credential is under the check
 
 SupplyGate models an authenticated vulnerability feed, so it holds a bearer
 token. That token is `@secret`:
@@ -101,11 +103,12 @@ pub type FeedCredential {
 ```
 
 From any read of `creds.token`, the compiler propagates a confidentiality
-label and proves it cannot reach a public sink (the gate report, the gate
-JSON, the console) without an audited `declassify`. SupplyGate never
-declassifies it, so the credential reaches no output. `leaky_supplygate.capa`
-is the counter-example that makes this concrete: it deliberately tries to
-write, print and log the token, and the compiler refuses it:
+label and reports a flow it detects to a public sink (the gate report, the
+gate JSON, the console) that does not pass through an audited `declassify`.
+SupplyGate never declassifies it, and the check reports no such flow in
+`supplygate.capa`. `leaky_supplygate.capa` is the counter-example that makes
+this concrete: it deliberately tries to write, print and log the token
+under `@strict_ifc`, and the compiler refuses it:
 
 ```
 $ python -m capa --check leaky_supplygate.capa
@@ -124,12 +127,12 @@ The fourth error is the important one: routing the secret through the
 `capa_log` logger does not launder it. The flow to the underlying public
 sink is still rejected. The real gate (`supplygate.capa`) checks clean.
 
-### 2. Capability discipline: the gate provably cannot exfiltrate
+### 2. Capability discipline: the gate holds no `Net`
 
 `main` acquires exactly two capabilities, `Fs` and `Stdio`, and immediately
 splits the filesystem authority into a **read-only view over `data/`** and a
 **write view over `out/`**. It never acquires `Net`, `Env`, `Proc`, `Db`,
-`Clock`, `Random` or `Unsafe`. The compiler proves it, and the SBOM records
+`Clock`, `Random` or `Unsafe`. The compiler checks it, and the SBOM records
 it:
 
 ```
@@ -149,9 +152,9 @@ reaches the network. Its only mention in the SBOM is
 
 ### 3. The artefacts: gate decision + SBOM
 
-`./generate.sh` produces, byte-reproducibly (pinned `SOURCE_DATE_EPOCH`):
+`./generate.sh` produces, with timestamps pinned by `SOURCE_DATE_EPOCH`:
 
-| Artefact | Emitted by | What it proves |
+| Artefact | Emitted by | What it shows |
 | --- | --- | --- |
 | `out/report.txt` / `out/gate.json` | running SupplyGate | the FAIL verdict + violations |
 | `out/report_clean.txt` / `out/gate_clean.json` | running SupplyGate | the PASS verdict |
@@ -160,10 +163,11 @@ reaches the network. Its only mention in the SBOM is
 | `sbom/sbom.spdx.json` | `capa --spdx` | SPDX 2.3 companion (OpenChain pipelines) |
 | `sbom/provenance.slsa.json` | `capa --provenance` | SLSA build provenance over the source |
 
-The manifest shows **zero declassification sites**: the tool discloses
-nothing derived from its secret. The gate decision is SupplyGate's verdict;
-the SBOM is the compiler's evidence about SupplyGate itself. A supply-chain
-tool that ships its own machine-verifiable SBOM is the meta-message.
+The manifest shows **zero declassification sites**: the tool makes no
+deliberate disclosure of anything derived from its secret. The gate decision
+is SupplyGate's verdict; the SBOM is the compiler's record of SupplyGate
+itself. A supply-chain tool that ships its own compiler-derived SBOM is the
+meta-message.
 
 ## Layout
 
@@ -171,11 +175,11 @@ tool that ships its own machine-verifiable SBOM is the meta-message.
 | --- | --- |
 | `domain.capa` | the typed vocabulary: components, advisories, policy, decision |
 | `jsonx.capa` | small total extraction helpers over the built-in JSON tree |
-| `ingest.capa` | CycloneDX SBOM parse into typed components (pure) |
-| `feed.capa` | OSV export parse + the `@secret` feed credential (pure) |
-| `policy.capa` | organisation policy parse (pure) |
-| `eval.capa` | the gate engine: cross-reference + four policy rules (pure) |
-| `report.capa` | build the human report + machine gate JSON (pure) |
+| `ingest.capa` | CycloneDX SBOM parse into typed components (no capability) |
+| `feed.capa` | OSV export parse + the `@secret` feed credential (no capability) |
+| `policy.capa` | organisation policy parse (no capability) |
+| `eval.capa` | the gate engine: cross-reference + four policy rules (no capability) |
+| `report.capa` | build the human report + machine gate JSON (no capability) |
 | `supplygate.capa` | the orchestrator: read (Fs ro) -> evaluate -> write (Fs wo) |
 | `leaky_supplygate.capa` | counter-example: the credential leak the compiler rejects |
 | `data/project.cdx.json` | sample failing build SBOM (12 components) |
@@ -184,7 +188,7 @@ tool that ships its own machine-verifiable SBOM is the meta-message.
 | `data/policy.json` | sample organisation policy |
 | `out/` | sample generated reports + gate decisions |
 | `sbom/` | sample generated manifest + SBOMs + provenance |
-| `capa_log` (git dep) | pure, capability-free; fetched + GPG/SLSA-verified by `capa install` into `vendor/` (the CI audit log) |
+| `capa_log` (git dep) | holds only the `Stdio` its caller hands it; fetched + GPG/SLSA-verified by `capa install` into `vendor/` (the CI audit log) |
 
 ## Run it
 
@@ -197,11 +201,11 @@ All commands use the local Capa compiler; substitute `python -m capa` for
 # GPG signature against the verify_key in capa.toml and its SLSA
 # provenance, writes capa.lock, and vendors the source under vendor/.
 # Import the publisher key first (see capa_log's SECURITY.md). capa_log
-# is pure and holds zero capabilities, so this adds a verified supply
+# holds only the Stdio it is handed, so this adds a verified supply
 # chain without widening the {Fs, Stdio} surface.
 capa install
 
-# Type-check + information-flow check (clean: no leaks)
+# Type-check + information-flow check (clean: no finding)
 capa --check supplygate.capa
 
 # Run the gate. Writes out/report.txt, out/gate.json and the clean pair.
@@ -242,8 +246,8 @@ capa --wasm --component --wasi --preopen data/:ro --run supplygate.capa
 
 ## Dependencies
 
-One dependency, **pure and capability-free**, resolved as a **verified git
-dependency** in `capa.toml`:
+One dependency, which **holds no capability of its own**, resolved as a
+**verified git dependency** in `capa.toml`:
 
 - `capa_log` - levelled logging over `Stdio` (the CI audit log lines).
 
@@ -266,7 +270,7 @@ This is the verifiable supply chain Capa is about, made concrete: the
 dependency is not trusted by convention, it is **cryptographically verified
 at install time**, and its pinned, signed provenance is recorded in
 `capa.lock`. It holds no authority of its own, so the SupplyGate capability
-surface stays exactly `{Fs, Stdio}`, and the SBOM proves it does not widen
+surface stays `{Fs, Stdio}`, and the SBOM shows it does not widen
 it. The SBOM/OSV/policy inputs are parsed with Capa's built-in JSON
 support, so no parser dependency is needed.
 
@@ -274,9 +278,9 @@ support, so no parser dependency is needed.
 
 A live authenticated OSV fetch over an attenuated `Net` capability
 restricted to an allow-listed feed host is the natural v2 extension:
-SupplyGate would then present the `@secret` credential to exactly one host,
-and the same machinery would prove the credential reaches only that host and
-no gate output. It is left out of v1 to keep the capability surface at
+SupplyGate would then present the `@secret` credential to one allow-listed
+host, and the same checks would apply to the credential's flow to that host
+and to the gate outputs. It is left out of v1 to keep the capability surface at
 `{Fs, Stdio}` and the offline run byte-reproducible; the feed is a local
 `osv.json` and the credential is modelled as a held secret.
 

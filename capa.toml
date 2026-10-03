@@ -3,10 +3,10 @@
 # SupplyGate is a supply-chain COMPLIANCE GATE for CI/CD. It reads three
 # local inputs (a project's CycloneDX SBOM, an offline OSV vulnerability
 # export, and the organisation's policy), decides PASS/FAIL for the build,
-# and emits its OWN capability SBOM as machine-verifiable proof of the
+# and emits its OWN capability SBOM as a compiler-derived record of the
 # authority it holds.
 #
-# One dependency, pure and capability-free, resolved as a VERIFIED git
+# One dependency, holding no capability of its own, resolved as a VERIFIED git
 # dependency. `capa install` fetches it at its GPG-signed tag, verifies
 # the tag signature against verify_key and its SLSA provenance, records
 # the pinned commit in capa.lock, and vendors it under vendor/ (git-
@@ -15,9 +15,9 @@
 #   capa_log - levelled logging over Stdio (the CI audit log lines).
 #
 # The dependency holds no authority of its own, so the SupplyGate
-# capability surface stays exactly what main.capa acquires: Fs and Stdio,
-# nothing more. The compiler's --manifest / --cyclonedx output proves it:
-# in particular there is no Net, so the tool provably cannot exfiltrate.
+# capability surface stays what main.capa acquires: Fs and Stdio. The
+# compiler's --manifest / --cyclonedx output records it: in particular no
+# function holds Net.
 # The verified supply chain is itself part of that story.
 
 [package]
